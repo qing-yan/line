@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/qing-yan/line#readme",
     "devDependencies": {
-        "vuepress": "^1.9.8"
+        "vuepress": "^1.9.8",
+        "vuepress-theme-reco": "^1.6.16"
     }
 }

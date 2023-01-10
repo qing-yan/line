@@ -6,19 +6,29 @@ module.exports = {
         // ['link', { rel: 'icon', href: '/assets/img/logo.png' }],
         // ['meta', { name: 'Keywords', content: '' }],
         // ['meta', { name: 'author', content: '刘照君' }],
-        ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }], //解决站外图片引用失败的问题
+        ['meta', { name: 'referrer', content: 'no-referrer' }], //解决站外图片引用失败的问题
+        ['meta', { name: 'referrer', content: 'origin' }], //解决站外图片引用失败的问题
+        ['meta', { name: 'referrer', content: 'unsafe-url' }], //解决站外图片引用失败的问题
+        //<meta name="referrer" content="no-referrer"></meta>
         // ['link', { rel: 'manifest', href: '/assets/manifest.json' }]
     ],
-    // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
-    nextLinks: false,
-    // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
-    prevLinks: false,
+
     theme: 'reco',
     themeConfig: {
         nav: [
             { text: '时间轴', link: '/timeline/', icon: 'reco-date' }
         ],
-        // subSidebar: 'auto',
+        lastUpdated: '最近更新',
+        sidebar: [
+            '/sici/du-fu',
+            '/sici/ming-ju',
+        ],
+        displayAllHeaders: true,
+        subSidebar: 'auto',
+        // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
+        nextLinks: false,
+        // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
+        prevLinks: false,
         // logo: '/assets/img/logo.png',
         author: '刘照君',
         startYear: '2023/1/7',

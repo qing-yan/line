@@ -64,6 +64,12 @@ publish: true
 ## 四、软件
 1. [7ZIP](https://www.7-zip.org/)
 > 压缩软件
+2. [potplay](http://www.potplayercn.com/download)
+> 视频播放软件
+3. [everything](https://www.voidtools.com/zh-cn/)
+> 电脑全局搜索软件，秒杀WINDOWS自带搜索
+4. [utools](https://u.tools/)
+> uTools 是什么? uTools 是新一代效率工具平台，自由组合插件应用，打造专属你的趁手工具集
 
 ## 五、综合型网站
 1. [JAY的资源库](https://www.lovejay.top/)

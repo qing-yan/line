@@ -10,7 +10,7 @@ export default hopeTheme({
   },
   iconAssets: "iconfont",
   logo: "",
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "",
   docsDir: "docs",
   blog: {
     medias: {},

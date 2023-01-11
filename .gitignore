@@ -1,3 +1,5 @@
 /.temp
 /docs/.vuepress/dist
 /node_modules
+/src/.vuepress/.cache
+/src/.vuepress/.temp

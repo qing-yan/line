@@ -1,12 +1,10 @@
 ---
 title: 新冠
-date: '2023-01-08'
-sidebar: 'auto'
-categories:
+date: 2023-01-08
+category:
  - 生活
-tags:
+tag:
  - 生活
-publish: true
 ---
 
 ## 感染

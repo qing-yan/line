@@ -27,5 +27,6 @@ export default defineUserConfig({
   //
   alias: {
     "@T123": path.resolve(__dirname, './components/t123.vue'),
+    "@ExcelImport": path.resolve(__dirname, './components/excel-import.vue'),
   },
 })

@@ -1,11 +1,10 @@
 <template>
-    <el-input v-model="jsonData" :rows="2" type="textarea" placeholder=""/>
-    <el-button type="primary" @click="decode">解析</el-button>
+    <el-input v-model="jsonData" :rows="10" type="textarea" placeholder=""/>
+    <el-button type="primary" @click="decode" style="margin-top: 5px; margin-bottom: 5px">解析</el-button>
     <el-card>{{ result }}</el-card>
 </template>
 <script>
-// import { is } from '@babel/types'
-
+import { ElMessage } from 'element-plus'
 export default {
     data() {
         return {
@@ -17,7 +16,12 @@ export default {
         //解析
         decode() {
             var r = JSON.parse(this.jsonData).res
-            var num = '\\\'' + r[0].choice_value
+            try {
+                var num = '\\\'' + r[0].choice_value
+            } catch (error) {
+                ElMessage.error('解析错误')
+                return
+            }
             var name = r[2].choice_value
             var phone = r[6].choice_value
             var address = r[7].choice_value

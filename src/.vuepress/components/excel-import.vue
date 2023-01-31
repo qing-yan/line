@@ -18,6 +18,9 @@ export default {
             mode: 'huji'//模式
         }
     },
+    created () {
+        this.changeMode('huji')
+    },
     methods: {
         //解析
         decode() {

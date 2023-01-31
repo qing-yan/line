@@ -17,9 +17,7 @@ export default defineUserConfig({
   theme,
   shouldPrefetch: false,
   plugins: [
-    registerComponentsPlugin({
-      
-    }),
+    registerComponentsPlugin({}), 
   ],
   head: [
     ['meta',{name: 'referrer',content: 'no-referrer'}]
@@ -28,5 +26,6 @@ export default defineUserConfig({
   alias: {
     "@T123": path.resolve(__dirname, './components/t123.vue'),
     "@ExcelImport": path.resolve(__dirname, './components/excel-import.vue'),
+    "@Sici": path.resolve(__dirname, './components/sici.vue'),
   },
 })

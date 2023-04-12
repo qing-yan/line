@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+# 使用方式：在当前目录下，直接运行此文件，指令：.\deploy.sh
+# 或：bash .\deploy.sh
 
 # 确保脚本抛出遇到的错误
 set -e

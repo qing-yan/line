@@ -7,8 +7,8 @@ tag:
  - 词
  - 诗
 ---
-<Sici/>
+<!-- <Sici/>
 
 <script setup lang="ts">
 import Sici from "@Sici";
-</script>
+</script> -->

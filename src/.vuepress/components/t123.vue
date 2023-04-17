@@ -30,7 +30,7 @@ export default {
                 var phone = r[6].choice_value
                 var address = r[7].choice_value
                 var issue = r[13].choice_value.replace(/\r\n/g, '').replace(/\n/g, '')
-                var deadline = r[16].choice_value
+                var deadline = r[16].choice_value.split(' ')[0]
                 var remark = r[17].choice_value
                 //TODO 全部显示
                 //sql部分

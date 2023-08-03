@@ -25,7 +25,7 @@ export default {
                     ElMessage.error('解析错误')
                     return
                 }
-                var list = new Array()
+                var pre = ''
                 r.forEach(element => {
                     var name = element.realName//姓名
                     var sex = element.sex//性别
@@ -45,9 +45,9 @@ export default {
                     var linkSgName = element.linkSgName//社工
                     var linkMjName = element.linkMjName//民警
                     var code = element.code//三色码
-                    var temp = `${name}\t${sex}\t${birthday}\t${height}\t${weight}\t${idsNo}\t${nation}\t${marriageStatus}\t${educationLevel}\t${job}\t${birthplaceAddress}\t${linkPhone}\t${liveAddress}\t${cateTypeText}\t${level}\t${linkSgName}\t${linkMjName}\t${code}`
-                    list.push(temp)
+                    pre += `${name}\t${sex}\t${birthday}\t${height}\t${weight}\t${idsNo}\t${nation}\t${marriageStatus}\t${educationLevel}\t${job}\t${birthplaceAddress}\t${linkPhone}\t${liveAddress}\t${cateTypeText}\t${level}\t${code}\t${linkSgName}\t${linkMjName}\n`
                 });
+                this.result = pre
                 this.copy()
             })
         },

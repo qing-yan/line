@@ -1,6 +1,6 @@
 <template>
     <canvas id="canvas">
-        <el-card v-html="sici[0].content"></el-card>
+        <!-- <el-card v-html="sici[0].content"></el-card> -->
 
     </canvas>
 </template>

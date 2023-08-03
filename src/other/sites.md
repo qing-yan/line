@@ -29,12 +29,19 @@ tag:
 > TinyPNG – 智能压缩 WebP、PNG 和 JPEG 图像
 6. [imagestool](https://imagestool.com/zh_CN/index.html)
 >  在线图片处理,批量转换图片,批量压缩图片,webp转jpg,视频转gif,gif转webp 
+7. [ARC](https://arc.tencent.com/zh/ai-demos/faceRestoration)
+>  人像修复、人像抠图 
 
 ### 音频处理
 1. [音独](https://ondoku3.com/zh-hans/)
 > Ondoku 是一种文字转语音软件，可以免费阅读多达 5000 个字符的文字。此外，使用付费计划，您每月最多可以阅读 100 万个字符。以高质量语音朗读的文本可以作为音频文件 (.mp3) 朗读，并可用于商业目的。
 2. [XAudioPro](https://www.xaudiopro.com/easyedit/)
 > 在线音频工作站,让音频编辑更轻松
+
+
+### AI
+1. [AIAGC](https://www.aiagc.com/)
+> AIAGC导航提供全网最全的AI人工智能工具网站推荐，帮助大家发现最新AI绘画，AI智能写作助手，AI聊天机器人，AI配音，AI音乐，AI换脸工具应用软件，让AI帮助你更高效的工作，学习。
 
 ### 其他
 1. [反向词典](https://wantwords.net/)

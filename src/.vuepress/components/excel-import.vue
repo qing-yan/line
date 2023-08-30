@@ -12,7 +12,7 @@ export default {
         return {
             excelData: '',
             result: '',
-            hujiSql: 'INSERT INTO \`户籍信息\` (\`乡镇\`, \`村\`, \`社\`, \`户号\`, \`与户主关系\`, \`姓名\`, \`身份证号\`, \`性别\`, \`民族\`) VALUES ',
+            hujiSql: 'INSERT INTO \`people\` (\`town\`, \`village\`, \`old_village\`, \`group\`, \`house_num\`, \`house_master_relation\`, \`name\`, \`id_cade\`, \`gender\`, \`nation\`) VALUES ',
             otherSql: 'INSERT INTO `table` (cols) VALUES ',
             currentSql: '',
             mode: 'huji'//模式
@@ -35,7 +35,7 @@ export default {
                 let cols = rows[i].split("\t")//继续切片为二维数组
                 cols[6] = '\\\'' + cols[6]
                 //组装语句
-                valu += `('${cols[0]}','${cols[1]}','${cols[2]}','${cols[3]}','${cols[4]}','${cols[5]}','${cols[6]}','${cols[7]}','${cols[8]}')` + ','
+                valu += `('${cols[0]}','${cols[1]}','${cols[2]}','${cols[3]}','${cols[4]}','${cols[5]}','${cols[6]}','${cols[7]}','${cols[8]}','${cols[9]}')` + ','
             }
             valu = valu.substring(0, valu.length - 1)
             this.result = this.currentSql + valu

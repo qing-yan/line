@@ -28,5 +28,6 @@ export default defineUserConfig({
     "@Tjd": path.resolve(__dirname, './components/tjd.vue'),
     "@ExcelImport": path.resolve(__dirname, './components/excel-import.vue'),
     "@Sici": path.resolve(__dirname, './components/sici.vue'),
+    "@Tcompare": path.resolve(__dirname, './components/tcompare.vue'),
   },
 })

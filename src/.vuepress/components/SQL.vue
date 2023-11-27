@@ -14,7 +14,7 @@ import { ElMessage } from 'element-plus'
 export default {
     data() {
         return {
-            tableName: 'people',
+            tableName: '',
             text: '',
             datas: [[]],
             result: ''
@@ -45,9 +45,10 @@ export default {
                 var sql = `UPDATE ${this.tableName} SET ${fields} WHERE ${this.tableName}.${conditionField} = '${conditionFieldValue}';`
                 this.result = this.result + sql + '\n'
             }
+            this.copy(this.result)
         },
-        copy(id) {
-            navigator.clipboard.writeText(document.querySelector(id).innerHTML).then(() => {
+        copy(data) {
+            navigator.clipboard.writeText(data).then(() => {
                 ElMessage({
                     message: '复制成功',
                     type: 'success',

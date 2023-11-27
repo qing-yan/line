@@ -39,5 +39,6 @@ export default defineUserConfig({
     "@Tcompare": path.resolve(__dirname, './components/tcompare.vue'),
     "@Regex": path.resolve(__dirname, './components/regex.vue'),
     "@SQL": path.resolve(__dirname, './components/SQL.vue'),
+    "@Tidcard": path.resolve(__dirname, './components/tidcard.vue'),
   },
 })

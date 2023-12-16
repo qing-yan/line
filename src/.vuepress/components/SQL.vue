@@ -1,20 +1,22 @@
 <template>
     <div>
+        <span>组合UPDATE语句，数据格式为Excel格式</span>
         <el-input v-model="tableName" placeholder="表名" style="width: 100%" clearable/>
         <el-input v-model="text" type="textarea" :rows="10" placeholder="内容" style="width: 100%"/>
         <el-button type="primary" @click="decode()" style="margin-top: 5px; margin-bottom: 5px">解析</el-button>
+        <el-button type="primary" @click="decode2()" style="margin-top: 5px; margin-bottom: 5px">SELECT</el-button>
         <el-card style="white-space: pre-line;">
             {{ result }}
         </el-card>
     </div>
-
+    
 </template>
 <script>
 import { ElMessage } from 'element-plus'
 export default {
     data() {
         return {
-            tableName: '',
+            tableName: 'people',
             text: '',
             datas: [[]],
             result: ''
@@ -23,7 +25,6 @@ export default {
     methods: {
         //解析
         decode() {
-            this.text = this.text.substring(0, this.text.length - 1)
             //按行切片
             let rows = this.text.split("\n")
             for (let i = 0; i < rows.length; i++) {
@@ -45,6 +46,10 @@ export default {
                 var sql = `UPDATE ${this.tableName} SET ${fields} WHERE ${this.tableName}.${conditionField} = '${conditionFieldValue}';`
                 this.result = this.result + sql + '\n'
             }
+            this.copy(this.result)
+        },
+        decode2() {
+            this.result = '\'' + this.text.replaceAll('\n', '\',\'') + '\''
             this.copy(this.result)
         },
         copy(data) {

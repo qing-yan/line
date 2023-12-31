@@ -40,5 +40,6 @@ export default defineUserConfig({
     "@Regex": path.resolve(__dirname, './components/regex.vue'),
     "@SQL": path.resolve(__dirname, './components/SQL.vue'),
     "@Tidcard": path.resolve(__dirname, './components/tidcard.vue'),
+    "@Meeting": path.resolve(__dirname, './components/meeting.vue'),
   },
 })

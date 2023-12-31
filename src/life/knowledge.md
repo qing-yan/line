@@ -4,11 +4,12 @@ date: 2023-11-26
 category:
  - 生活
 ---
-## 卫生纸
+## 
+1. [胃镜](https://www.bilibili.com/video/BV1H64y1W7vZ)
+2. [结石操](https://www.bilibili.com/video/BV1fC4y1y7bk)也不知道有用没，先存着
+3. [擤鼻涕注意事项](https://www.bilibili.com/video/BV1qi4y1h7hD)不要堵住使劲擤，可能导致中耳炎等，可用盐水冲洗
+4. [牙膏选购指南](https://www.bilibili.com/video/BV1H8411i7Hi)
+> - 含水合硅石牙膏：水合硅石 > 碳酸钙
+> - 含氟牙膏：单氟磷酸钠 > 氟化钠
 
-## 牙膏
-1. 含水合硅石牙膏：水合硅石 > 碳酸钙，佳洁士双色锁白牙膏（￥<20）、高露洁每日光泽健齿修护牙膏（￥20）、好来超白矿物盐钾牙膏（￥<10）、两面针美白亮齿牙膏（￥8.5）
-2. 含氟牙膏：单氟磷酸钠 > 氟化钠
-
-参考资料：
-> [【知识GO】不同价格的牙膏到底有什么区别？| 刷了20多年的牙，原来刷错了！](https://www.bilibili.com/video/BV1h8411i7Hi)
+5. [眼镜镜片选购指南](https://www.bilibili.com/video/BV1aa4y1B7FL)

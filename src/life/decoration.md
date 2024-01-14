@@ -5,10 +5,10 @@ category:
  - 生活
 ---
 ## 刀哥专栏（不许笑）
-[第一次装修，能被坑多惨？｜装修大哥，你睡了吗？我睡不着](https://www.bilibili.com/video/BV1tu41117jn)  
-[惨绝人寰！花30w，房子被装成了公共厕所？我把木匠告上法庭！](https://www.bilibili.com/video/BV1W44y1M7Va)  
-[我把木匠送上法庭｜在线看冤种，来，挺急的](https://www.bilibili.com/video/BV14r4y1q7n4)  
-[木匠大哥，求你！坑我！我是大冤种！](https://www.bilibili.com/video/BV1Jv4y1P7oa)
+- [第一次装修，能被坑多惨？｜装修大哥，你睡了吗？我睡不着](https://www.bilibili.com/video/BV1tu41117jn)  
+- [惨绝人寰！花30w，房子被装成了公共厕所？我把木匠告上法庭！](https://www.bilibili.com/video/BV1W44y1M7Va)  
+- [我把木匠送上法庭｜在线看冤种，来，挺急的](https://www.bilibili.com/video/BV14r4y1q7n4)  
+- [木匠大哥，求你！坑我！我是大冤种！](https://www.bilibili.com/video/BV1Jv4y1P7oa)
 
 ## 罗兰朵女士专栏（也不许笑）
 [](https://www.bilibili.com/video/)-

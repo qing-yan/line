@@ -66,17 +66,8 @@ tag:
 > 档案查询
 2. [国家法律法规数据库](https://flk.npc.gov.cn/)
 
-## 四、软件
-1. [7ZIP](https://www.7-zip.org/)
-> 压缩软件
-2. [potplay](http://www.potplayercn.com/download)
-> 视频播放软件
-3. [everything](https://www.voidtools.com/zh-cn/)
-> 电脑全局搜索软件，秒杀WINDOWS自带搜索
-4. [utools](https://u.tools/)
-> uTools 是什么? uTools 是新一代效率工具平台，自由组合插件应用，打造专属你的趁手工具集
 
-## 五、综合型网站
+## 四、综合型网站
 1. [JAY的资源库](https://www.lovejay.top/)
 > 导航网站，影视，破解游戏，软件资源，破解软件，工具，破解，网盘资源
 2. [记灵](https://remeins.com/)
@@ -84,7 +75,7 @@ tag:
 3. [一网一匠](https://ywyj.cn/)
 > B站UP一网一匠创建的产品发现社区，旨在打造一个服务于产品创造者和爱好者分享和交流社区，如果恰巧你是这样的人，那么欢迎你加入我们
 
-## 六、摸鱼摸鱼
+## 五、摸鱼摸鱼
 1. [在线扫雷](http://www.minesweeper.cn/)
 2. [GBT乐赏游戏空间](http://gbtgame.ysepan.com/)
 > 游戏下载

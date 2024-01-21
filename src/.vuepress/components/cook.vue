@@ -22,6 +22,7 @@ export default {
         return {
             urlPre: 'https://www.bilibili.com/video/',
             menu: [
+                {name: '包子', url: 'BV1t5411i73R', ingredients: ['面粉'], recommend: false, remark: ''},
                 {name: '馒头', url: 'BV1CQ4y1j7or', ingredients: ['面粉'], recommend: true, remark: '需要酵母菌'},
                 {name: '酸菜白肉', url: 'BV1MK4y1z7fw', ingredients: ['猪肉', '酸菜'], remark: '新鲜猪五花水煮后切片与酸菜一起煮'},
                 {name: '国宴小笼牛肉', url: 'BV1Ce411v7z5', ingredients: ['牛肉'], remark: '粉蒸牛肉，需要荷叶'},

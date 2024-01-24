@@ -6,6 +6,7 @@
         <el-button type="primary" @click="update('clear')" style="margin-top: 5px; margin-bottom: 5px">CLEAR UPDATE</el-button>
         <el-button type="primary" @click="update('concat')" style="margin-top: 5px; margin-bottom: 5px">CONCAT UPDATE</el-button>
         <el-button type="primary" @click="select()" style="margin-top: 5px; margin-bottom: 5px">SELECT</el-button>
+        <el-button type="primary" @click="clear()" style="margin-top: 5px; margin-bottom: 5px">清除</el-button>
         <el-card style="white-space: pre-line;">
             {{ result }}
         </el-card>
@@ -41,7 +42,7 @@ export default {
                 if (type == 'clear') {
                     fields = `${this.tableName}.${this.datas[0][1]} = '${e[1]}'`
                 } else {
-                    fields = `${this.tableName}.${this.datas[0][1]} = CONCAT(${this.tableName}.${this.datas[0][1]}, '${e[1]}')`
+                    fields = `${this.tableName}.${this.datas[0][1]} = CONCAT(IFNULL(${this.tableName}.${this.datas[0][1]}, ''), '${e[1]}')`
                 }
                 //多字段更新
                 if (e.length > 2) {
@@ -69,6 +70,9 @@ export default {
                     type: 'success',
                 })
             });
+        },
+        clear() {
+            this.result = ''
         }
     }
 }

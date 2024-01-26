@@ -29,3 +29,6 @@ tag:
 ## 浏览器插件
 1. [Chrono Power Action](https://microsoftedge.microsoft.com/addons/detail/chrono-power-action/edcbfceedocpofmemchpcnpmpfpobmaa)可以使用alt+q在浏览器内搜索书签等内容，类似utools，目前有可能无法设置
 2. [bilibili哔哩哔哩B站下载助手](https://csser.top/)[微软商店](https://microsoftedge.microsoft.com/addons/detail/cagicamgdlbdmonbclkpgiabbldodgae)
+
+## 安卓软件
+1. [RecordYou](https://github.com/you-apps/RecordYou/releases)安卓开源录屏软件

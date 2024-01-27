@@ -11,7 +11,6 @@
 
 (function() {
     'use strict';
-    // window.onload = () => {
     //增加按钮
     document.querySelector('body').appendChild(document.createElement('button'))
     var myButton = document.querySelector('body').querySelector('button')
@@ -23,14 +22,6 @@
         var dts = document.querySelectorAll('.bili-dyn-list__item');
         console.log(dts.length)
         dts.forEach(e => {
-            // var dynBut = e.querySelector('button');
-            // if (dynBut == null) {
-            //     e.querySelector('.bili-dyn-item__more').appendChild(document.createElement('button'));
-            //     dynBut = e.querySelector('button');
-            //     dynBut.setAttribute('style', "width: 50px; height: 50px; margin-right: 50px;")
-            //     dynBut.click()
-            // }
-
             //
             var newCancle = e.querySelector('#newCancle');
             if (newCancle == null) {
@@ -48,29 +39,6 @@
                 }
             }
 
-            // cancle.setAttribute('style', 'left: -69px; top: 16px; width: 94px; z-index: 2010; border-radius: 8px; box-shadow: rgba(106, 115, 133, 0.12) 0px 11px 12px 0px; cursor: default;');
-            // cancle.setAttribute('data-modal', '')
-            //bili-dyn-more__menu__item
-
-
         });
     });
-    // }
-
-    // Your code here...
 })();
-
-// #float_button {
-//     position: fixed;/*表示在窗口固定*/
-//         right: 0px;/*距窗口右侧是0px，这个看具体需求*/
-//         bottom: 0px;/*距窗口底部是0px，这个看具体需求*/
-//         z-index: 99;/*优先级略高，防止其他元素覆盖，看需求*/
-//         background: #333;
-//         color: white;
-//         padding: 16px 24px;
-//         width: 120px;
-//         height: 50px;
-//         border-radius: 5px;
-//         text-align: center;
-//         line-height: 25px;
-//         }

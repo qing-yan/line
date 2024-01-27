@@ -22,6 +22,7 @@ export default {
         return {
             urlPre: 'https://www.bilibili.com/video/',
             menu: [
+                {name: '炸肉丸', url: 'BV1Je411J7z8', ingredients: ['猪肉'], recommend: false, remark: ''},
                 {name: '包子', url: 'BV1t5411i73R', ingredients: ['面粉'], recommend: false, remark: ''},
                 {name: '卤牛肉', url: 'BV1YT4y1h7kf', ingredients: ['牛肉'], recommend: false, remark: '香砂3g，桂皮4g，小茴香8g，干姜5g，白芷4g，花椒4g，荜拨3g，草果1个，肉蔻3个，丁香1g，山楂3g'},
                 {name: '馒头', url: 'BV1CQ4y1j7or', ingredients: ['面粉'], recommend: true, remark: '需要酵母菌'},

@@ -12,7 +12,7 @@ category:
 > - 含水合硅石牙膏：水合硅石 > 碳酸钙
 > - 含氟牙膏：单氟磷酸钠 > 氟化钠
 
-2. 绳结
+- 绳结
 > - [猪蹄扣和晾衣绳](https://www.bilibili.com/video/BV1Kt4y1R7v7)
 > - [钓鱼可能用的一种结](https://www.bilibili.com/video/BV19w411V756)不仅限钓鱼，主要不知名
 > - [可调节松紧活结1](https://www.bilibili.com/video/BV1oe411Z7U2)

@@ -9,6 +9,7 @@ tag:
 - 有些常用且众所周知的软件，就不介绍了，比如potplayer、everything，这里主要推荐一些小众且好用的软件，以及一些我备份的软件。
 
 ## 装机软件
+- [Ditto](https://www.ghxi.com/ditto.html)剪贴板增强
 - [易采集](https://www.easyspider.cn/)可视化爬虫软件[github地址](https://github.com/easy-spider/EasySpider)
 - [QuickHand](https://www.bilibili.com/video/BV14a4y1J7X8)生成仿手写会议记录等，已备份
 - [手柄伴侣(Controller Companion)](https://mod.3dmgame.com/mod/187337)手柄操控键鼠工具，已备份
@@ -22,13 +23,6 @@ tag:
 - [风灵月影管理器](https://github.com/dyang886/Game-Cheats-Manager)暂时没用过
 
 
-
-## VSCODE插件
-- Markdown All in One
-- Chinese (Simplified)
-- Markdown Preview Enhanced
-- Vue Language Features
-- Word Count CJK
 
 ## 浏览器插件
 - [Chrono Power Action](https://microsoftedge.microsoft.com/addons/detail/chrono-power-action/edcbfceedocpofmemchpcnpmpfpobmaa)可以使用alt+q在浏览器内搜索书签等内容，类似utools，目前有可能无法设置

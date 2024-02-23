@@ -22,6 +22,16 @@ export default {
         return {
             urlPre: 'https://www.bilibili.com/video/',
             menu: [
+                /*
+                
+                */
+                {name: '盘龙茄子', url: 'BV1k642137yh', ingredients: ['茄子'], recommend: false, remark: ''},
+                {name: '粉蒸羊肉', url: 'BV1qy421a7wt', ingredients: ['羊肉'], recommend: false, remark: ''},
+                {name: '椒麻鸡', url: 'BV1Y6421g73p', ingredients: ['鸡肉'], recommend: false, remark: ''},
+                {name: '风味茄子', url: 'BV1Xy421a7Gn', ingredients: ['茄子'], recommend: false, remark: ''},
+                {name: '辣卤', url: 'BV1jC4y1e7TK', ingredients: ['卤菜'], recommend: false, remark: ''},
+                {name: '洋芋擦擦', url: 'BV1DZ4y1J7wQ', ingredients: ['土豆', '猪肉'], recommend: false, remark: '需要面粉，洋葱，辣椒'},
+                {name: '白卤肘子', url: 'BV1Te411J7uz', ingredients: ['猪肘'], recommend: false, remark: ''},
                 {name: '炸肉丸', url: 'BV1Je411J7z8', ingredients: ['猪肉'], recommend: false, remark: ''},
                 {name: '包子', url: 'BV1t5411i73R', ingredients: ['面粉'], recommend: false, remark: ''},
                 {name: '卤牛肉', url: 'BV1YT4y1h7kf', ingredients: ['牛肉'], recommend: false, remark: '香砂3g，桂皮4g，小茴香8g，干姜5g，白芷4g，花椒4g，荜拨3g，草果1个，肉蔻3个，丁香1g，山楂3g'},

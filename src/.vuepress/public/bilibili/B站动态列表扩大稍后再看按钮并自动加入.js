@@ -48,6 +48,7 @@
                 //点击稍后再看按钮
                 button.click();
             });
+            button.innerText = `稍后再看+${buttons.length}`;
         });
     };
 })();

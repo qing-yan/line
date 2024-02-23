@@ -4,6 +4,8 @@ date: 2023-11-26
 category:
  - 生活
 ---
+
+- [洗发水选购指南](https://www.bilibili.com/video/BV17J4m1b75z)
 - [胃镜](https://www.bilibili.com/video/BV1H64y1W7vZ)
 - [肠镜](https://www.bilibili.com/video/BV1HC4y1Y7MX)
 - [结石操](https://www.bilibili.com/video/BV1fC4y1y7bk)也不知道有用没，先存着
@@ -24,6 +26,7 @@ category:
 > - [高空吊物自收绳结](https://www.bilibili.com/video/BV1964y1J7Cm)
 > - [防勒手绳结](https://www.bilibili.com/video/BV1qT4y1p7Fm)拉或提绳子勒手时可使用，需要棍子
 > - [捆绑结](https://www.bilibili.com/video/BV1UK411x7ME)用于捆绑物体
+> - [塑料袋扣](https://www.bilibili.com/video/BV1ne41117k9)用绳子给塑料袋打结
 
 - [护眼模式](https://www.bilibili.com/video/BV1ZG411r7pC)
 - [体重称的工作原理](https://www.bilibili.com/video/BV17W4y1w7yh)

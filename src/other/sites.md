@@ -81,4 +81,15 @@ tag:
 > 游戏下载
 
 <!-- 藏点东西 -->
-<!-- https://asian.xam.nz/ -->
+<!-- 
+https://asian.xam.nz/
+ -->
+<!-- 
+jav8.pro
+jav8.lol
+jav8.vip
+jav8.one
+jav8.me
+https://jav8.link/
+ -->
+ <!-- https://yumanse.com/ -->

@@ -7,11 +7,13 @@ tag:
  - vuepress
  - 插件
 ---
-## VUEPRESS学习
-要学习vuepress建议看这个视频：[【啰里啰嗦】一步步搭建 VuePress 及优化](https://www.bilibili.com/video/BV1vb411m7NY)  
+- [VUEPRESS学习](https://www.bilibili.com/video/BV1vb411m7NY)  
 之所以会存在这个博客，就得益于此视频
 
 相关主题推荐：[vuepress-theme-hope](https://theme-hope.vuejs.press/zh/)
+
+- [油猴开发指南](https://learn.scriptcat.org/)
+- [Hello算法](https://www.hello-algo.com/)算法学习
 
 ## VSCODE插件
 1. Markdown Preview Enhanced：Markdown 渲染的主力，提供了许多强大的功能。

@@ -102,24 +102,23 @@ function setHtml(div) {
  */
 function statistical(e) {
     var span = e.querySelector('.corner')
-    if (span != null) {
-        var duration = span.innerHTML
-        //分离并统计分和秒
-        var arr = duration.split(':')
-        var total = 0
-        if (arr.length == 2) {
-            total += parseInt(arr[0]) * 60 + parseInt(arr[1])
-        } else {
-            if (arr[0] != '已失效') {
-                total += parseInt(arr[0])
-            } else {
-                shixiao += 1
-            }
-        }
-        if (total > 0) {
-            totalDuration += total
-        }
-    } else {
+    //处理多P视频
+    if (span == null) {
         duoP += 1
+        return
     }
+    //分离并统计分和秒
+    var arr = span.innerHTML.split(':')
+    //翻转数组
+    arr.reverse()
+    //处理失效视频            
+    if (arr[0] == '已失效') {
+        shixiao += 1
+        return
+    }
+    //累加
+    var h = arr[2] == null ? 0 : parseInt(arr[2]) * 3600
+    var m = arr[1] == null ? 0 : parseInt(arr[1]) * 60
+    var s = parseInt(arr[0])
+    totalDuration += h + m + s
 }

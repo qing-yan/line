@@ -32,3 +32,5 @@ category:
 - [体重称的工作原理](https://www.bilibili.com/video/BV17W4y1w7yh)
 - [二硫化硒的用法](https://www.bilibili.com/video/BV1g94y1K7qE)
 - [生锈铁锅的清洁与开锅](https://www.bilibili.com/video/BV1Ce411b71c)
+- 家庭小物件
+> - [衣柜收纳](https://www.bilibili.com/video/BV1GJ4m1t7LB)

@@ -16,9 +16,10 @@
         //打印标记
         console.log('B站动态列表稍后再看按钮扩大并自动加入脚本已加载');
         //获取上次添加时间
-        var lastAddTime = localStorage.getItem('lastAddTime');
+        var lastAddTime = new Date(Number(localStorage.getItem('lastAddTime')));
         if (lastAddTime != null) {
-            addButton('上次添加时间' + lastAddTime, '100px')
+            addButton(`上次添加时间${lastAddTime.toLocaleString()}
+            约${((new Date().getTime() - lastAddTime.getTime()) / 1000 / 3600).toFixed(1)}小时前`, '100px')
         }
         var button = addButton('稍后再看', '500px')
         var num = 0
@@ -43,8 +44,7 @@
             
             button.innerText = `稍后再看+${num}`;
             //本地储存添时间
-            var lastAddTime = new Date();
-            localStorage.setItem('lastAddTime', lastAddTime.toLocaleString());
+            localStorage.setItem('lastAddTime', new Date().getTime());
         });
     };
 })();

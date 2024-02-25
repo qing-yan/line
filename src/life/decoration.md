@@ -82,7 +82,8 @@ category:
 4. [罗兰朵等翻车经验](https://www.bilibili.com/video/BV1JB4y127wh)
 5. [防翻车](https://www.bilibili.com/video/BV1mY4y1s7mv)
 6. [施工](https://www.bilibili.com/video/BV1bJ411V71T)
-6. [软装和硬装](https://www.bilibili.com/video/BV1tJ411V7hd)
+7. [软装和硬装](https://www.bilibili.com/video/BV1tJ411V7hd)
+8. [共享存水、黄墙绿地等](https://www.bilibili.com/video/BV1EK421k7Xp)
 
 ---
 ---

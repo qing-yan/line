@@ -27,6 +27,8 @@ category:
 > - [防勒手绳结](https://www.bilibili.com/video/BV1qT4y1p7Fm)拉或提绳子勒手时可使用，需要棍子
 > - [捆绑结](https://www.bilibili.com/video/BV1UK411x7ME)用于捆绑物体
 > - [塑料袋扣](https://www.bilibili.com/video/BV1ne41117k9)用绳子给塑料袋打结
+> - [活扣接绳](https://www.bilibili.com/video/BV1Y642137wc)
+> - [布林结](https://www.bilibili.com/video/BV1xa4y1d7qi)绳圈大小不会变化的结
 
 - [护眼模式](https://www.bilibili.com/video/BV1ZG411r7pC)
 - [体重称的工作原理](https://www.bilibili.com/video/BV17W4y1w7yh)
@@ -34,3 +36,5 @@ category:
 - [生锈铁锅的清洁与开锅](https://www.bilibili.com/video/BV1Ce411b71c)
 - 家庭小物件
 > - [衣柜收纳](https://www.bilibili.com/video/BV1GJ4m1t7LB)
+
+- [吹不破的泡泡](https://www.bilibili.com/video/BV1iy421a7Ze)

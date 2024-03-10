@@ -4,17 +4,13 @@ date: 2023-11-26
 category:
  - 生活
 ---
+## 购物指南
+- [洗发水](https://www.bilibili.com/video/BV17J4m1b75z)
+- [眼镜]https://www.bilibili.com/video/BV1Sy42187RW)
+- [牙膏](https://www.bilibili.com/video/BV1H8411i7Hi)
 
-- [洗发水选购指南](https://www.bilibili.com/video/BV17J4m1b75z)
-- [胃镜](https://www.bilibili.com/video/BV1H64y1W7vZ)
-- [肠镜](https://www.bilibili.com/video/BV1HC4y1Y7MX)
-- [结石操](https://www.bilibili.com/video/BV1fC4y1y7bk)也不知道有用没，先存着
-- [擤鼻涕注意事项](https://www.bilibili.com/video/BV1qi4y1h7hD)不要堵住使劲擤，可能导致中耳炎等，可用盐水冲洗
-- [牙膏选购指南](https://www.bilibili.com/video/BV1H8411i7Hi)
-> - 含水合硅石牙膏：水合硅石 > 碳酸钙
-> - 含氟牙膏：单氟磷酸钠 > 氟化钠
 
-- 绳结
+## 绳结
 > - [猪蹄扣和晾衣绳](https://www.bilibili.com/video/BV1Kt4y1R7v7)
 > - [钓鱼可能用的一种结](https://www.bilibili.com/video/BV19w411V756)不仅限钓鱼，主要不知名
 > - [可调节松紧活结1](https://www.bilibili.com/video/BV1oe411Z7U2)
@@ -29,7 +25,9 @@ category:
 > - [塑料袋扣](https://www.bilibili.com/video/BV1ne41117k9)用绳子给塑料袋打结
 > - [活扣接绳](https://www.bilibili.com/video/BV1Y642137wc)
 > - [布林结](https://www.bilibili.com/video/BV1xa4y1d7qi)绳圈大小不会变化的结
+> - [收纳捆绑绳子的方法](https://www.bilibili.com/video/BV1Hj421S7ru)
 
+## 其他
 - [护眼模式](https://www.bilibili.com/video/BV1ZG411r7pC)
 - [体重称的工作原理](https://www.bilibili.com/video/BV17W4y1w7yh)
 - [二硫化硒的用法](https://www.bilibili.com/video/BV1g94y1K7qE)
@@ -38,3 +36,7 @@ category:
 > - [衣柜收纳](https://www.bilibili.com/video/BV1GJ4m1t7LB)
 
 - [吹不破的泡泡](https://www.bilibili.com/video/BV1iy421a7Ze)
+- [胃镜](https://www.bilibili.com/video/BV1H64y1W7vZ)
+- [肠镜](https://www.bilibili.com/video/BV1HC4y1Y7MX)
+- [结石操](https://www.bilibili.com/video/BV1fC4y1y7bk)也不知道有用没，先存着
+- [擤鼻涕注意事项](https://www.bilibili.com/video/BV1qi4y1h7hD)不要堵住使劲擤，可能导致中耳炎等，可用盐水冲洗

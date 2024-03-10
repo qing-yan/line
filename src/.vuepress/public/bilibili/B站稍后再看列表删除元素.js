@@ -11,6 +11,8 @@
 
 //总时长，单位秒
 var totalDuration = 0;
+//视频数量
+var count = 0;
 //多P视频
 var duoP = 0;
 //已失效
@@ -18,40 +20,41 @@ var shixiao = 0;
 (function() {
     'use strict';
     window.onload = () => {
-        //首次标记
-        var first = true
-        var div = addDiv(document);
-        //每5秒打印
-        setInterval(() => {
-            totalDuration = 0;
-            duoP = 0;
-            shixiao = 0;
-            var items = document.querySelectorAll('.av-item.clearfix')
-            for (let i = 0; i < items.length; i++) {
-                const e = items[i];
-                //删除按钮
-                if (first) {
-                    var bb = document.createElement('button')
-                    bb.innerHTML = '删除'
-                    bb.setAttribute('style', 'margin-left: 40px')
-                    e.querySelector('.state').appendChild(bb)
-                    bb.addEventListener('click', () => {
-                        e.innerHTML = ''
-                    })
-                    if (i == items.length - 1) {
-                        first = false
-                        
+            //首次标记
+            var first = true
+            var div = addDiv(document);
+            //每5秒打印
+            setInterval(() => {
+                totalDuration = 0;
+                duoP = 0;
+                shixiao = 0;
+                var items = document.querySelectorAll('.av-item.clearfix')
+                count = items.length;
+                for (let i = 0; i < items.length; i++) {
+                    const e = items[i];
+                    //删除按钮
+                    if (first) {
+                        var bb = document.createElement('button')
+                        bb.innerHTML = '隐藏'
+                        bb.setAttribute('style', 'margin-left: 40px')
+                        e.querySelector('.state').appendChild(bb)
+                        bb.addEventListener('click', () => {
+                            e.style.display = 'none'
+                        })
+                        if (i == items.length - 1) {
+                            first = false
+
+                        }
                     }
+
+                    //---------------统计时长----------
+                    statistical(e)
+                        //大舅妈200 二舅妈200 幺姨200 三姨200 四姨200 伯伯伯妈400
                 }
-                
-                //---------------统计时长----------
-                statistical(e)
-                //大舅妈200 二舅妈200 幺姨200 三姨200 四姨200 伯伯伯妈400
-            }
-            setHtml(div)
-        }, 5000)
-    }
-    // Your code here...
+                setHtml(div)
+            }, 5000)
+        }
+        // Your code here...
 })();
 /**
  * 创建顶层浮动面板
@@ -61,7 +64,7 @@ var shixiao = 0;
 function addDiv(document) {
     //创建顶层浮动面板
     var div = document.createElement('div')
-    //设置样式，位于网页左侧居中
+        //设置样式，位于网页左侧居中
     div.style.position = 'fixed';
     div.style.top = '100px';
     div.style.left = '10px';
@@ -90,10 +93,13 @@ function setHtml(div) {
     const h2 = parseInt(totalDuration2 / 3600)
     const minute2 = parseInt(totalDuration2 / 60 % 60)
     const second2 = totalDuration2 % 60
+    const countTemp = count - shixiao - duoP
+    const pj = parseInt(totalDuration / countTemp)
     div.innerText = `总时长${h}小时${minute}分钟${second}秒
     预计需${h2}小时${minute2}分钟${second2}秒
     多P视频${duoP}个
     已失效${shixiao}个
+    ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒
     `;
 }
 /**
@@ -102,16 +108,16 @@ function setHtml(div) {
  */
 function statistical(e) {
     var span = e.querySelector('.corner')
-    //处理多P视频
+        //处理多P视频
     if (span == null) {
         duoP += 1
         return
     }
     //分离并统计分和秒
     var arr = span.innerHTML.split(':')
-    //翻转数组
+        //翻转数组
     arr.reverse()
-    //处理失效视频            
+        //处理失效视频            
     if (arr[0] == '已失效') {
         shixiao += 1
         return

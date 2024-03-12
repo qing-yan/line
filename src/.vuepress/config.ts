@@ -41,5 +41,6 @@ export default defineUserConfig({
     "@SQL": path.resolve(__dirname, './components/SQL.vue'),
     "@Tidcard": path.resolve(__dirname, './components/tidcard.vue'),
     "@Cook": path.resolve(__dirname, './components/cook.vue'),
+    "@ThreeDoors": path.resolve(__dirname, './components/math/threeDoors.vue'),
   },
 })

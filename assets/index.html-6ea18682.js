@@ -1,0 +1,1 @@
+import{aP as o,P as t,Q as n,ae as a,F as c}from"./framework-270ea3de.js";const r={};function s(_,l){const e=c("AutoCatalog");return t(),n("div",null,[a(e)])}const d=o(r,[["render",s],["__file","index.html.vue"]]);export{d as default};

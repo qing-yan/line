@@ -25,8 +25,12 @@ export default {
                 /*
 
                 */
-                {name: '小炒鸡、香辣花甲', url: 'BV1sy421i7wM', ingredients: ['鸡肉', '花甲'], recommend: false, remark: '洗澡泡菜'},
+                {name: '胭脂萝卜', url: 'BV1n2421M7xm', ingredients: ['萝卜'], recommend: false, remark: '洗澡泡菜'},
+                {name: '皮蛋香菜抄手', url: 'BV1QD42177zZ', ingredients: ['猪肉', '皮蛋', '香菜'], recommend: false, remark: ''},
+                {name: '小炒鸡、香辣花甲', url: 'BV1sy421i7wM', ingredients: ['鸡肉', '花甲'], recommend: false, remark: ''},
                 {name: '泡菜', url: 'BV1sS421N7eS', ingredients: [], recommend: false, remark: '洗澡泡菜'},
+                {name: '炝炒莲白', url: 'BV1Qx4y1r7F5', ingredients: ['莲白'], recommend: false, remark: ''},
+                {name: '老汤卤肉', url: 'BV1kF4m1M7P3', ingredients: ['卤菜'], recommend: false, remark: '主要讲卤水复用技巧'},
                 {name: '乱炖', url: 'BV13F4m1M7Y1', ingredients: ['白菜', '豆腐', '猪肉', '火腿', '香菇', '胡萝卜'], recommend: false, remark: ''},
                 {name: '盘龙茄子', url: 'BV1k642137yh', ingredients: ['茄子'], recommend: false, remark: ''},
                 {name: '粉蒸羊肉', url: 'BV1qy421a7wt', ingredients: ['羊肉'], recommend: false, remark: ''},

@@ -11,34 +11,64 @@
 
 (function() {
     'use strict';
-    //增加按钮
-    document.querySelector('body').appendChild(document.createElement('button'))
-    var myButton = document.querySelector('body').querySelector('button')
-    myButton.setAttribute('style', 'position: fixed; right: 0px; bottom: 0px; z-index: 99; background: #333; color: white; padding: 16px 24px; width: 120px; height: 50px; border-radius: 5px; text-align: center; line-height: 25px;')
-    myButton.setAttribute('id', 'top')
-        //设置点击事件
-    myButton.addEventListener('click', () => {
-        console.log(1111)
-        var dts = document.querySelectorAll('.bili-dyn-list__item');
-        console.log(dts.length)
-        dts.forEach(e => {
-            //
-            var newCancle = e.querySelector('#newCancle');
-            if (newCancle == null) {
-                e.querySelector('.bili-dyn-more__btn.tp').click();
-                var cancle = e.querySelector('.bili-dyn-more__menu__item + div');
-                if (cancle != null) {
-                    cancle.setAttribute('style', 'margin-right: 50px');
-                    cancle.setAttribute('id', 'newCancle');
-                    e.querySelector('.bili-dyn-item__more').appendChild(cancle);
-                    cancle.addEventListener('click', () => {
-                        setTimeout(() => {
-                            document.querySelector('.bili-modal__button.confirm').click()
-                        }, 500)
-                    })
+    //等待页面加载
+    window.onload = () => {
+        //
+        var myButton = addDiv()
+        myButton.addEventListener('click', () => {
+            //获取动态组件
+            var dtArr = document.querySelectorAll('.bili-dyn-list__item');
+            for (let i = 0; i < dtArr.length; i++) {
+                const dt = dtArr[i];
+                //获取删除按钮
+                var sc = dt.querySelector('.bili-dyn-more__menu__item + div');
+                if (sc == null) {
+                    continue;
+                }
+                //添加自动确认删除监听
+                sc.addEventListener('click', () => {
+                    setTimeout(() => {
+                        document.querySelector('.bili-modal__button.confirm').click()
+                    }, 100);
+                });
+                // sc.setAttribute('data-modal', '');
+                //获取父组件的父组件的父组件
+                var fdiv = dt.querySelector('.bili-dyn-item__main');
+                try {
+                    fdiv.insertBefore(sc, fdiv.firstChild)
+                } catch (error) {
+                    console.log('遇到源动态被删除了')
                 }
             }
+        })
 
-        });
-    });
+    }
 })();
+
+/**
+ * 创建顶层浮动面板
+ * @returns {Object} - 创建的浮动面板
+ */
+function addDiv() {
+    //创建顶层浮动面板
+    var div = document.createElement('div')
+        //设置样式，位于网页左侧居中
+    div.style.position = 'fixed';
+    div.style.top = '100px';
+    div.style.left = '10px';
+    div.style.zIndex = '9999';
+    //背景色天蓝色
+    div.style.backgroundColor = '#87cefa';
+    //背景不透明度
+    div.style.opacity = '0.9';
+    //修改border
+    div.style.borderRadius = '5px';
+    div.style.border = '1px solid #ccc';
+    div.style.padding = '10px';
+    div.style.fontSize = '16px';
+    div.style.cursor = 'pointer';
+    div.innerHTML = '外置删除按钮';
+    //将面板添加到网页中
+    document.body.appendChild(div)
+    return div
+}

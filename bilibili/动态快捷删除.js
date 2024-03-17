@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         B站本人动态快捷删除
+// @name         动态快捷删除
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!

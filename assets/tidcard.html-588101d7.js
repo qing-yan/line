@@ -1,4 +1,4 @@
-import{aP as c,F as p,P as _,Q as f,ae as r,a8 as i,ac as o,ad as x,Y as g,c as v,u as b}from"./framework-270ea3de.js";import{E as h}from"./app-8e82a087.js";const C={data(){return{idcards:"",result:""}},methods:{decode(e){this.result="";var t=this.idcards.split(`
+import{aP as c,F as p,P as _,Q as f,ae as r,a8 as i,ac as o,ad as x,Y as g,c as v,u as b}from"./framework-270ea3de.js";import{E as h}from"./app-560dfee9.js";const C={data(){return{idcards:"",result:""}},methods:{decode(e){this.result="";var t=this.idcards.split(`
 `);t.forEach(s=>{if(e===0){var m=s.substring(6,10);this.result=this.result+m+`
 `}else if(e===1){var a=s.substring(6,14);this.result=this.result+a+`
 `}else if(e===2){var n=s.substring(16,17)%2==0?"女":"男";this.result=this.result+n+`

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         B站稍后再看列表删除元素
+// @name         稍后再看数据统计
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
@@ -28,11 +28,15 @@ var shixiao = 0;
                 totalDuration = 0;
                 duoP = 0;
                 shixiao = 0;
-                var items = document.querySelectorAll('.av-item.clearfix')
+                var items = document.querySelectorAll('.av-item.clearfix');
+                //如果数量不变则返回
+                if (items.length == count) {
+                    return
+                }
                 count = items.length;
                 for (let i = 0; i < items.length; i++) {
                     const e = items[i];
-                    //删除按钮
+                    //------------设置【隐藏】按钮--------
                     if (first) {
                         var bb = document.createElement('button')
                         bb.innerHTML = '隐藏'
@@ -43,16 +47,15 @@ var shixiao = 0;
                         })
                         if (i == items.length - 1) {
                             first = false
-
                         }
                     }
 
                     //---------------统计时长----------
-                    statistical(e)
-                        //大舅妈200 二舅妈200 幺姨200 三姨200 四姨200 伯伯伯妈400
+                    statistical(e);
+                    //大舅妈200 二舅妈200 幺姨200 三姨200 四姨200 伯伯伯妈400
                 }
                 setHtml(div)
-            }, 2000)
+            }, 1000)
         }
         // Your code here...
 })();
@@ -63,10 +66,11 @@ var shixiao = 0;
  */
 function addDiv(document) {
     //创建顶层浮动面板
-    var div = document.createElement('div')
-        //设置样式，位于网页左侧居中
+    var div = document.createElement('div');
+    //设置样式，位于网页左侧居中
     div.style.position = 'fixed';
-    div.style.top = '100px';
+    //底部距离
+    div.style.bottom = '100px';
     div.style.left = '10px';
     div.style.zIndex = '9999';
     //背景色天蓝色

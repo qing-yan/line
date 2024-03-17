@@ -25,6 +25,7 @@ export default {
                 /*
 
                 */
+                {name: '番茄清炖牛肉', url: 'BV192421A78c', ingredients: ['牛肉', '番茄', '胡萝卜'], recommend: false, remark: '猪肉、排骨、鸡肉等也可这样做'},
                 {name: '胭脂萝卜', url: 'BV1n2421M7xm', ingredients: ['萝卜'], recommend: false, remark: '洗澡泡菜'},
                 {name: '皮蛋香菜抄手', url: 'BV1QD42177zZ', ingredients: ['猪肉', '皮蛋', '香菜'], recommend: false, remark: ''},
                 {name: '小炒鸡、香辣花甲', url: 'BV1sy421i7wM', ingredients: ['鸡肉', '花甲'], recommend: false, remark: ''},

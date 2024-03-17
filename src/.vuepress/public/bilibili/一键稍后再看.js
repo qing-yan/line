@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         B站动态列表扩大稍后再看按钮并自动加入
+// @name         一键稍后再看
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!

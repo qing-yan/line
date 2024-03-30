@@ -25,6 +25,12 @@ export default {
                 /*
 
                 */
+                {name: '土豆炖牛肉', url: 'BV1Ej42197Bg', ingredients: ['牛肉', '土豆'], recommend: false, remark: ''},
+                {name: '梅菜扣肉、炸鸡腿', url: 'BV1Hx421Q71Y', ingredients: ['猪肉', '鸡肉'], recommend: false, remark: '五花肉、鸡腿，用空气炸锅制作'},
+                {name: '缠肘花', url: 'BV1AF4m157KB', ingredients: ['猪肉'], recommend: false, remark: '猪肘'},
+                {name: '柠檬鸡爪', url: 'BV1WC411h73g', ingredients: ['鸡爪'], recommend: false, remark: ''},
+                {name: '手撕鸡', url: 'BV1CP411k7gx', ingredients: ['鸡肉'], recommend: false, remark: ''},
+                {name: '酱汁黄瓜', url: 'BV14z421R7rZ', ingredients: ['黄瓜'], recommend: false, remark: ''},
                 {name: '番茄清炖牛肉', url: 'BV192421A78c', ingredients: ['牛肉', '番茄', '胡萝卜'], recommend: false, remark: '猪肉、排骨、鸡肉等也可这样做'},
                 {name: '胭脂萝卜', url: 'BV1n2421M7xm', ingredients: ['萝卜'], recommend: false, remark: '洗澡泡菜'},
                 {name: '皮蛋香菜抄手', url: 'BV1QD42177zZ', ingredients: ['猪肉', '皮蛋', '香菜'], recommend: false, remark: ''},

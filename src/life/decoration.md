@@ -27,6 +27,8 @@ category:
 2. [浴霸](https://www.bilibili.com/video/BV1Lp4y1N7ah)
 3. [潮湿异味](https://www.bilibili.com/video/BV14K411M7u2)
 4. [地漏](https://www.bilibili.com/video/BV1ys4y187ek)
+5. [防水](https://www.bilibili.com/video/BV1ju4m1T7qy)
+
 
 ## 卧室
 1. [榻榻米](https://www.bilibili.com/video/BV1Ry4y1n77Z)
@@ -65,6 +67,7 @@ category:
 > [无主灯](https://www.bilibili.com/video/BV1Am4y1d7XP)  
 > [买灯](https://www.bilibili.com/video/BV12U4y1n7am)  
 > [灯光高级感](https://www.bilibili.com/video/BV1pD4y1R7RQ)  
+> [吸顶灯选购](https://www.bilibili.com/video/BV1T1421Q7SW)  
 5. 洗碗机
 > [住范儿1](https://www.bilibili.com/video/BV1EU4y1n7bj)  
 > [洗碗机测评](https://www.bilibili.com/video/BV1DP4y1Z7Lt)  

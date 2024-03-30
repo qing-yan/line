@@ -11,11 +11,27 @@ category:
 
 
 ## 绳结
+### 防滑结
+> - [拔桩结](https://www.bilibili.com/video/BV1eN4y1h7mH)适合短绳子
+> - [冰柱结](https://www.bilibili.com/video/BV1zZ4y1y71t)适合短棍子
+
+### 绳套
+> - [链马扣](https://www.bilibili.com/video/BV11a411x7FF)固定绳圈大小，活结
+> - [古罗马吊结](https://www.bilibili.com/video/BV1oE411C7v9)可变绳圈大小，活结，钓鱼可用
+> - [称人结](https://www.bilibili.com/video/BV1oE411C7v9)固定绳圈大小
+
+### 捆物体
+> - [猪蹄扣](https://www.bilibili.com/video/BV1sf4y1J7em)活结、死结均可
+
+### 其他
+> - [篷布角固定](https://www.bilibili.com/video/BV117411J73H/?t=571)
+> - [扎口袋](https://www.bilibili.com/video/BV1GE411J7vv)活结
+> - [瓶口结](https://www.bilibili.com/video/BV1JG4y1g7yH)也可以捆物体
+
 > - [猪蹄扣和晾衣绳](https://www.bilibili.com/video/BV1Kt4y1R7v7)
 > - [钓鱼可能用的一种结](https://www.bilibili.com/video/BV19w411V756)不仅限钓鱼，主要不知名
 > - [可调节松紧活结1](https://www.bilibili.com/video/BV1oe411Z7U2)
 > - [拖车结](https://www.bilibili.com/video/BV1LW4y1N7qy)
-> - [拔桩结](https://www.bilibili.com/video/BV1eN4y1h7mH)绳子中部绑棍子，需穿过绳头，适合短绳子
 > - [瓶口结](https://www.bilibili.com/video/BV1BW4y1F7pg)绳子绑瓶口，方便手提
 > - [樵夫结、猪蹄扣捆十字交叉棍子](https://www.bilibili.com/video/BV1BW4y1F7pg)樵夫结更简单，也适用线性捆扎
 > - [5种称人结](https://www.bilibili.com/video/BV1Ta4y127p5)

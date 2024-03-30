@@ -36,15 +36,48 @@ var shixiao = 0;
                 count = items.length;
                 for (let i = 0; i < items.length; i++) {
                     const e = items[i];
-                    //------------设置【隐藏】按钮--------
+                    //------------设置【隐藏】【前置】按钮--------
                     if (first) {
+                        //------------设置【隐藏】按钮--------
                         var bb = document.createElement('button')
                         bb.innerHTML = '隐藏'
                         bb.setAttribute('style', 'margin-left: 40px')
                         e.querySelector('.state').appendChild(bb)
                         bb.addEventListener('click', () => {
                             e.style.display = 'none'
-                        })
+                        });
+                        //------------设置【前置】按钮--------
+                        var qz = document.createElement('button');
+                        qz.innerHTML = '前置'
+                        qz.setAttribute('style', 'margin-left: 40px')
+                        e.querySelector('.state').appendChild(qz)
+                        qz.addEventListener('click', () => {
+                            //获取bvid并转为aid
+                            var href = e.querySelector('.t').getAttribute('href')
+                            var bvid = href.substring(href.length - 12);
+                            var aid = bv2av(bvid);
+                            //从cookie中获取csrf
+                            var reg = /(?<=bili_jct=).*(?=; s)/
+                            var csrf = reg.exec(document.cookie)[0];
+                            //发送请求
+                            $.ajax('https://api.bilibili.com/x/v2/history/toview/add', {
+                                type: 'POST',
+                                xhrFields: {
+                                    withCredentials: true // 携带跨域cookie  //单个设置
+                                },
+                                headers: {
+                                    cookie: document.cookie
+                                },
+                                data: { aid: aid, jsonp: 'jsonp', csrf: csrf },
+                                success: function(result) {
+                                    console.log(result);
+                                },
+                                error: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            bb.click()
+                        });
                         if (i == items.length - 1) {
                             first = false
                         }
@@ -131,4 +164,22 @@ function statistical(e) {
     var m = arr[1] == null ? 0 : parseInt(arr[1]) * 60
     var s = parseInt(arr[0])
     totalDuration += h + m + s
+};
+/**
+ * bv号转av号
+ * 代码来自：https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/misc/bvid_desc.md
+ * @param {bv号} bvid 
+ * @returns 
+ */
+function bv2av(bvid) {
+    const XOR_CODE = BigInt(23442827791579);
+    const MASK_CODE = BigInt(2251799813685247);
+    const BASE = BigInt(58);
+    const data = 'FcwAPNKTMug3GV5Lj7EJnHpWsx4tb8haYeviqBz6rkCy12mUSDQX9RdoZf';
+    const bvidArr = Array.from(bvid);
+    [bvidArr[3], bvidArr[9]] = [bvidArr[9], bvidArr[3]];
+    [bvidArr[4], bvidArr[7]] = [bvidArr[7], bvidArr[4]];
+    bvidArr.splice(0, 3);
+    const tmp = bvidArr.reduce((pre, bvidChar) => pre * BASE + BigInt(data.indexOf(bvidChar)), BigInt(0));
+    return Number((tmp & MASK_CODE) ^ XOR_CODE);
 }

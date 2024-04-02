@@ -36,16 +36,8 @@ var shixiao = 0;
                 count = items.length;
                 for (let i = 0; i < items.length; i++) {
                     const e = items[i];
-                    //------------设置【隐藏】【前置】按钮--------
+                    //------------设置【前置】按钮--------
                     if (first) {
-                        //------------设置【隐藏】按钮--------
-                        var bb = document.createElement('button')
-                        bb.innerHTML = '隐藏'
-                        bb.setAttribute('style', 'margin-left: 40px')
-                        e.querySelector('.state').appendChild(bb)
-                        bb.addEventListener('click', () => {
-                            e.style.display = 'none'
-                        });
                         //------------设置【前置】按钮--------
                         var qz = document.createElement('button');
                         qz.innerHTML = '前置'
@@ -59,6 +51,7 @@ var shixiao = 0;
                             //从cookie中获取csrf
                             var reg = /(?<=bili_jct=).*(?=; s)/
                             var csrf = reg.exec(document.cookie)[0];
+                            csrf = csrf.substring(0, 32);
                             //发送请求
                             $.ajax('https://api.bilibili.com/x/v2/history/toview/add', {
                                 type: 'POST',
@@ -73,10 +66,10 @@ var shixiao = 0;
                                     console.log(result);
                                 },
                                 error: function(err) {
-                                    console.log(err);
+                                    alert(err)
                                 }
                             });
-                            bb.click()
+                            e.style.display = 'none'
                         });
                         if (i == items.length - 1) {
                             first = false

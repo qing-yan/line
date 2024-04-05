@@ -25,6 +25,7 @@ export default {
                 /*
 
                 */
+                {name: '泡鸡爪', url: 'BV1Lj421R72J', ingredients: ['鸡爪'], recommend: false, remark: ''},
                 {name: '土豆炖牛肉', url: 'BV1Ej42197Bg', ingredients: ['牛肉', '土豆'], recommend: false, remark: ''},
                 {name: '梅菜扣肉、炸鸡腿', url: 'BV1Hx421Q71Y', ingredients: ['猪肉', '鸡肉'], recommend: false, remark: '五花肉、鸡腿，用空气炸锅制作'},
                 {name: '缠肘花', url: 'BV1AF4m157KB', ingredients: ['猪肉'], recommend: false, remark: '猪肘'},

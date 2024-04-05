@@ -23,25 +23,29 @@
         }
         var button = addButton('稍后再看', '500px')
         var num = 0
-        //添加监听功能
+            //添加监听功能
         button.addEventListener('click', function() {
             //获取所有bili-dyn-list__item，即动态列表
             var dynList = document.querySelectorAll('.bili-dyn-list__item');
             dynList.forEach((dyn) => {
-                //获取bili-dyn-card-video，即视频组件
-                var dynVideo = dyn.querySelector('.bili-dyn-card-video')
-                //如果为空则不是视频动态，不为空才是
-                if (dynVideo != null) {
-                    var but = dynVideo.querySelector('.bili-dyn-card-video__mark:not(.active)')
-                    if (but != null) {
-                        but.click()
-                        //隐藏动态
-                        dyn.style.display = 'none';
-                        num += 1
+                var dataType = dyn.getAttribute('data-type');
+                //只隐藏视频动态，1-转发；2-图文；4-更新合集；8-视频；64-文章；2047-直播
+                if (dataType == 8 || dataType == 4) {
+                    //获取bili-dyn-card-video，即视频组件
+                    var dynVideo = dyn.querySelector('.bili-dyn-card-video');
+                    //如果为空则不是视频动态，不为空才是
+                    if (dynVideo != null) {
+                        var but = dynVideo.querySelector('.bili-dyn-card-video__mark:not(.active)')
+                        if (but != null) {
+                            but.click();
+                            //隐藏动态
+                            dyn.style.display = 'none';
+                            num += 1
+                        }
                     }
                 }
             });
-            
+
             button.innerText = `稍后再看+${num}`;
             //本地储存添时间
             localStorage.setItem('lastAddTime', new Date().getTime());

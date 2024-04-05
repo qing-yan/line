@@ -15,12 +15,6 @@ import Decoration from "@Decoration";
 - [我把木匠送上法庭｜在线看冤种，来，挺急的](https://www.bilibili.com/video/BV14r4y1q7n4)  
 - [木匠大哥，求你！坑我！我是大冤种！](https://www.bilibili.com/video/BV1Jv4y1P7oa)
 
-## 罗兰朵女士专栏（也不许笑）
-[](https://www.bilibili.com/video/)-
-[](https://www.bilibili.com/video/)
-[](https://www.bilibili.com/video/)
-[](https://www.bilibili.com/video/)
-
 ## 厨房
 - [水龙头](https://www.bilibili.com/video/BV1cr421s7BX)
 - [挡水条](https://www.bilibili.com/video/BV19h4y1B7jj)

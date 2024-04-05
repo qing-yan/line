@@ -24,10 +24,12 @@ category:
 > - [猪蹄扣](https://www.bilibili.com/video/BV1sf4y1J7em)活结、死结均可
 > - [瓶口结2](https://www.bilibili.com/video/BV1KJ4m1j7Dw/&t=106)活结
 > - [瓶口结](https://www.bilibili.com/video/BV1JG4y1g7yH)也可以捆物体
+> - [双合结](https://www.bilibili.com/video/BV1Jm411z7Jg)比猪蹄扣紧，需要折双
 
 ### 其他
 > - [篷布角固定](https://www.bilibili.com/video/BV117411J73H/?t=571)
 > - [扎口袋](https://www.bilibili.com/video/BV1GE411J7vv)活结
+> - [穿线孔](https://www.bilibili.com/video/BV1AC411b7ci?t=52)
 
 > - [猪蹄扣和晾衣绳](https://www.bilibili.com/video/BV1Kt4y1R7v7)
 > - [钓鱼可能用的一种结](https://www.bilibili.com/video/BV19w411V756)不仅限钓鱼，主要不知名

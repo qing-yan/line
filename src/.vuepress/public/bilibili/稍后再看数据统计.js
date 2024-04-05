@@ -125,11 +125,13 @@ function setHtml(div) {
     const second2 = totalDuration2 % 60
     const countTemp = count - shixiao - duoP
     const pj = parseInt(totalDuration / countTemp)
+    var ljz = pj - countTemp;
     div.innerText = `总时长${h}小时${minute}分钟${second}秒
     预计需${h2}小时${minute2}分钟${second2}秒
     多P视频${duoP}个
     已失效${shixiao}个
     ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒
+    临界值${parseInt(ljz / 60 % 60)}分${ljz % 60}秒
     `;
 }
 /**

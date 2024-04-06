@@ -34,10 +34,12 @@ export default {
                 
                 {name: '住范-橱柜', url: 'BV1MC4y1A74X', tags: ['厨房', '橱柜'], remark: '橱柜设计'},
                 {name: '阳仔-水电', url: 'BV14P4y1H7Tj', tags: ['厨房', '水电'], remark: '水电布局'},
-                {name: '阳仔-洗碗机', url: 'BV16Y411e7J6', tags: ['厨房', '洗碗机'], remark: ''},
-                {name: '阳仔-净水器', url: 'BV1j34y1L7h2', tags: ['厨房', '净水器'], remark: ''},
-                {name: '阳仔-净水器', url: 'BV1r5411S7Gm', tags: ['厨房', '净水器'], remark: '前置过滤器'},
-                {name: '诡计-净水器', url: 'BV1Jc411G7BP', tags: ['厨房', '净水器'], remark: '全方案'},
+                {name: '阳仔-洗碗机', url: 'BV16Y411e7J6', tags: ['厨房', '电器'], remark: ''},
+                {name: '阳仔-净水器', url: 'BV1j34y1L7h2', tags: ['厨房', '电器'], remark: ''},
+                {name: '阳仔-净水器', url: 'BV1r5411S7Gm', tags: ['厨房', '电器'], remark: '前置过滤器'},
+                {name: '诡计-净水器', url: 'BV1Jc411G7BP', tags: ['厨房', '电器'], remark: '全方案'},
+                {name: '住范-微蒸烤一体机', url: 'BV1zQ4y1s7Zf', tags: ['厨房', '电器'], remark: ''},
+                {name: '住范-洗碗机', url: 'BV1EU4y1n7bj', tags: ['厨房', '电器'], remark: ''},
                 
                 {name: '住范-浴霸', url: 'BV1Lp4y1N7ah', tags: ['卫生间'], remark: '浴霸安装'},
                 {name: '住范-地漏', url: 'BV1ys4y187ek', tags: ['卫生间'], remark: ''},
@@ -98,12 +100,12 @@ export default {
                 {name: '砖哥-装修公司', url: 'BV1tN41137Bx', tags: ['装修公司', '合同'], remark: ''},
                 {name: '砖哥-装修公司', url: 'BV11B4y1f7zT', tags: ['装修公司', '报价单'], remark: '拆解报价单'},
                 
-                {name: '诡计-扫地机', url: 'BV1vC4y127U4', tags: ['电器'], remark: `1、头发清理、缠绕问题；2、自动集尘；`},
+                {name: '诡计-扫地机器人', url: 'BV1vC4y127U4', tags: ['电器'], remark: `1、头发清理、缠绕问题；2、自动集尘；`},
+                {name: '诡计-扫地机器人', url: 'BV1bg4y1T7b7', tags: ['电器'], remark: ``},
                 {name: '住范-烘干机', url: 'BV1gy4y1g7zz', tags: ['电器'], remark: ''},
                 {name: '住范-智能照明', url: 'BV1YD4y1V7e3', tags: ['电器', '灯具'], remark: ''},
                 {name: '住范-空调', url: 'BV1YD4y1V7e3', tags: ['电器', '空调'], remark: '空调遮丑'},
-                {name: '住范-微蒸烤一体机', url: 'BV1zQ4y1s7Zf', tags: ['电器'], remark: ''},
-                
+
                 {name: '住范-其他', url: 'BV1Wk4y1R7wx', tags: ['其他', '户型'], remark: ''},
                 {name: '住范-其他', url: 'BV1Lf4y1U7JC', tags: ['其他', '户型'], remark: ''},
                 {name: '住范-其他', url: 'BV1bJ411V71T', tags: ['其他', '装修流程', '水电', '防水', '厨房', '卫生间'], remark: '卫生间、厨房电上水下，腻子，电源极性检测器'},

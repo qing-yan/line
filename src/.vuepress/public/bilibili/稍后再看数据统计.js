@@ -20,6 +20,8 @@ var duoP = 0;
 var shixiao = 0;
 //执行次数统计
 var zhixingshu = 0;
+var ftd = 0,
+    ftdhms = '';
 (function() {
     'use strict';
     window.onload = () => {
@@ -62,17 +64,12 @@ var zhixingshu = 0;
                 var s = parseInt(arr[0])
                 s = h + m + s;
                 //
-                var p = (s / totalDuration * 100).toFixed(2) + '%';
-                if (zhixingshu == 0) {
-                    var percent = document.createElement('div');
-                    percent.innerHTML = p;
-                    //设置样式，不换行
-                    percent.setAttribute('style', 'display: inline-block; white-space: nowrap; margin-left: 10px')
-                    e.querySelector('.state').appendChild(percent)
-                } else {
-                    e.querySelector('.state').children[2].innerHTML = p;
+                var t = e.querySelector('.t').innerHTML;
+                if (zhixingshu != 0) {
+                    //截取5位之后的内容
+                    t = t.substring(5, t.length)
                 }
-
+                e.querySelector('.t').innerHTML = (s / totalDuration * 100).toFixed(2) + '%' + t;
             })
             zhixingshu += 1;
         }, 1000)
@@ -109,16 +106,12 @@ function addDiv(document) {
 }
 
 function setHtml(div) {
-    //第一次储存总时长
-    var ftd = localStorage.getItem('ftd');
     //获取上次储存的总时长
     var ltd = localStorage.getItem('totalDuration');
     if (zhixingshu == 0) {
         ftd = totalDuration
         ltd = totalDuration
-        localStorage.setItem('ftd', ftd)
     }
-
     localStorage.setItem('totalDuration', totalDuration);
     //计算剩余百分比
     var percent = (totalDuration / ftd * 100).toFixed(2);
@@ -135,7 +128,11 @@ function setHtml(div) {
     var countTemp = count - shixiao - duoP
     var pj = parseInt(totalDuration / countTemp)
     var ljz = pj - countTemp;
-    div.innerText = `总时长${h}小时${minute}分钟${second}秒
+    if (zhixingshu == 0) {
+        ftdhms = `${h}小时${minute}分钟${second}秒`
+    }
+    div.innerText = `总时长${ftdhms}
+    剩余总时长${h}小时${minute}分钟${second}秒
     预计需${h2}小时${minute2}分钟${second2}秒
     多P视频${duoP}个
     已失效${shixiao}个
@@ -195,7 +192,6 @@ function addQZ(e) {
     if (zhixingshu == 0) {
         //重置储存的总时长
         localStorage.setItem('totalDuration', 0);
-        localStorage.setItem('ftd', 0);
         //------------设置【前置】按钮--------
         var qz = document.createElement('button');
         qz.innerHTML = '前置'

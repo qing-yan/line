@@ -28,10 +28,10 @@ export default {
                 {name: '诡计-床垫', url: 'BV1sY411C7Wi', tags: ['卧室', '床垫'], remark: ''},
                 {name: '诡计-床垫', url: 'BV1q34y1g7vy', tags: ['卧室', '床垫'], remark: '软硬测试'},
                 {name: '住范-四件套', url: 'BV1LZ4y1A7Zq', tags: ['卧室'], remark: ''},
-                {name: '住范-床垫', url: 'BV1sY411C7Wi', tags: ['卧室', '床垫'], remark: ''},
+                {name: '住范-床垫', url: 'BV1rt4y19782', tags: ['卧室', '床垫'], remark: ''},
                 {name: '住范-枕头', url: 'BV1x64y167Xe', tags: ['卧室', '枕头'], remark: ''},
                 {name: '住范-床', url: 'BV19P411S7C9', tags: ['卧室', '床'], remark: ''},
-                
+
                 {name: '住范-橱柜', url: 'BV1MC4y1A74X', tags: ['厨房', '橱柜'], remark: '橱柜设计'},
                 {name: '阳仔-水电', url: 'BV14P4y1H7Tj', tags: ['厨房', '水电'], remark: '水电布局'},
                 {name: '阳仔-洗碗机', url: 'BV16Y411e7J6', tags: ['厨房', '电器'], remark: ''},
@@ -100,22 +100,29 @@ export default {
                 {name: '砖哥-装修公司', url: 'BV1tN41137Bx', tags: ['装修公司', '合同'], remark: ''},
                 {name: '砖哥-装修公司', url: 'BV11B4y1f7zT', tags: ['装修公司', '报价单'], remark: '拆解报价单'},
                 
+                {name: '诡计-热水器', url: 'BV1YV4y167ZM', tags: ['电器'], remark: ''},
+                {name: '诡计-电视', url: 'BV1N14y1Z7o9', tags: ['电器'], remark: ''},
+                {name: '诡计-智能家居', url: 'BV1Nh4y1Y7fi', tags: ['电器'], remark: ''},
+                {name: '诡计-智能筒灯', url: 'BV1dP41167ip', tags: ['电器'], remark: ''},
+                {name: '诡计-中央空调', url: 'BV1Ue411J7Sv', tags: ['电器'], remark: ''},
                 {name: '诡计-扫地机器人', url: 'BV1vC4y127U4', tags: ['电器'], remark: `1、头发清理、缠绕问题；2、自动集尘；`},
-                {name: '诡计-扫地机器人', url: 'BV1bg4y1T7b7', tags: ['电器'], remark: ``},
+                {name: '诡计-扫地机器人', url: 'BV1bg4y1T7b7', tags: ['电器'], remark: ''},
                 {name: '住范-烘干机', url: 'BV1gy4y1g7zz', tags: ['电器'], remark: ''},
                 {name: '住范-智能照明', url: 'BV1YD4y1V7e3', tags: ['电器', '灯具'], remark: ''},
                 {name: '住范-空调', url: 'BV1YD4y1V7e3', tags: ['电器', '空调'], remark: '空调遮丑'},
 
-                {name: '住范-其他', url: 'BV1Wk4y1R7wx', tags: ['其他', '户型'], remark: ''},
-                {name: '住范-其他', url: 'BV1Lf4y1U7JC', tags: ['其他', '户型'], remark: ''},
+                {name: '住范-适老化', url: 'BV1794y1773H', tags: ['其他'], remark: '适老化改造'},
+                {name: '住范-户型', url: 'BV1Wk4y1R7wx', tags: ['其他'], remark: ''},
+                {name: '住范-户型', url: 'BV1Lf4y1U7JC', tags: ['其他'], remark: ''},
                 {name: '住范-其他', url: 'BV1bJ411V71T', tags: ['其他', '装修流程', '水电', '防水', '厨房', '卫生间'], remark: '卫生间、厨房电上水下，腻子，电源极性检测器'},
                 {name: '砖哥-其他', url: 'BV12G411Z7NM', tags: ['其他', '水电', '防水', '卫生间', '踢脚线', '乳胶漆'], remark: '黄墙绿地、实景放样、地面开槽、衣柜后防水、卫生间拉毛、隐藏踢脚线、儿童漆'},
                 {name: '砖哥-其他', url: 'BV1Lh4y1C7Bx', tags: ['其他', '装修流程', '水电', '美缝'], remark: `1.装修形式
                 ->2.部分提前购买家电->3.拆改->4.下水管隔音棉->5.量尺寸出设计图->6.封阳台->7.中央空调等->8.水电改造
                 ->9.地暖->10.防水->11.瓦工瓷砖->12.木工柜子等->13.衣柜橱柜门->14.油漆工腻子乳胶漆->15.美缝->16.灯具等
                 ->17.木地板->18.全屋定制->19.门踢脚线->20.开荒保洁->21.软装家具`},
-                {name: '诡计-其他', url: 'BV1YP411o7dP', tags: ['适老化'], remark: '适老化改造'},
-                {name: '住范-其他', url: 'BV1794y1773H', tags: ['适老化'], remark: '适老化改造'},
+                {name: '诡计-适老化', url: 'BV1YP411o7dP', tags: ['其他'], remark: '适老化改造'},
+                {name: '诡计-软装', url: 'BV1xF411u7yK', tags: ['其他', '电器', '卧室', ], remark: '全屋定制、成品家具、室内门、踢脚线、地板、窗帘、床垫、家用电器'},
+                {name: '诡计-其他', url: 'BV1yF41147hT', tags: ['其他'], remark: '验房等准备工作'},
                 
                 
                 {name: '罗兰朵-我请你来做事，你来给我做主', url: 'BV16K411o7qm', tags: ['罗兰朵'], remark: ''},

@@ -59,3 +59,4 @@ category:
 - [肠镜](https://www.bilibili.com/video/BV1HC4y1Y7MX)
 - [结石操](https://www.bilibili.com/video/BV1fC4y1y7bk)也不知道有用没，先存着
 - [擤鼻涕注意事项](https://www.bilibili.com/video/BV1qi4y1h7hD)不要堵住使劲擤，可能导致中耳炎等，可用盐水冲洗
+- [洗衣机清洁](https://www.bilibili.com/video/BV1sa411k7zV)

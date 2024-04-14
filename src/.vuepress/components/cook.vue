@@ -25,6 +25,10 @@ export default {
                 /*
 
                 */
+                {name: '醋炒蛋', url: 'BV14A4m1c7Gs', ingredients: ['鸡蛋'], recommend: false, remark: ''},
+                {name: '番茄炖牛肉', url: 'BV1LE421u7Lr', ingredients: ['牛肉', '土豆', '番茄', '胡萝卜'], recommend: false, remark: ''},
+                {name: '泡菜', url: 'BV1vv411173X', ingredients: ['泡菜'], recommend: false, remark: ''},
+                {name: '泡菜', url: 'BV1B8411Z71Q', ingredients: ['泡菜'], recommend: false, remark: ''},
                 {name: '泡鸡爪', url: 'BV1Lj421R72J', ingredients: ['鸡爪'], recommend: false, remark: ''},
                 {name: '土豆炖牛肉', url: 'BV1Ej42197Bg', ingredients: ['牛肉', '土豆'], recommend: false, remark: ''},
                 {name: '梅菜扣肉、炸鸡腿', url: 'BV1Hx421Q71Y', ingredients: ['猪肉', '鸡肉'], recommend: false, remark: '五花肉、鸡腿，用空气炸锅制作'},

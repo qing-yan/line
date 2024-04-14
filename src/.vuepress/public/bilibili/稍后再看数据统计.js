@@ -9,6 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
+
 //总时长，单位秒
 var totalDuration = 0;
 //视频数量
@@ -17,73 +18,63 @@ var count = 0;
 var duoP = 0;
 //已失效
 var shixiao = 0;
+//执行次数统计
+var zhixingshu = 0;
+var ftd = 0,
+    ftdhms = '';
 (function() {
     'use strict';
     window.onload = () => {
-            //首次标记
-            var first = true
-            var div = addDiv(document);
-            //每5秒打印
-            setInterval(() => {
-                totalDuration = 0;
-                duoP = 0;
-                shixiao = 0;
-                var items = document.querySelectorAll('.av-item.clearfix');
-                //如果数量不变则返回
-                if (items.length == count) {
+        var div = addDiv(document);
+        //每5秒打印
+        setInterval(() => {
+            totalDuration = 0, duoP = 0, shixiao = 0;
+            var items = document.querySelectorAll('.av-item.clearfix');
+            //如果数量不变则返回
+            if (items.length == count) {
+                return
+            }
+            count = items.length;
+            items.forEach(e => {
+                //------------设置【前置】按钮--------
+                addQZ(e);
+                //---------------统计时长----------
+                statistical(e);
+            });
+            //更新面板信息
+            setHtml(div);
+            //更新时长比例
+            items.forEach(e => {
+                var span = e.querySelector('.corner');
+                //处理多P视频
+                if (span == null) {
                     return
                 }
-                count = items.length;
-                for (let i = 0; i < items.length; i++) {
-                    const e = items[i];
-                    //------------设置【前置】按钮--------
-                    if (first) {
-                        //------------设置【前置】按钮--------
-                        var qz = document.createElement('button');
-                        qz.innerHTML = '前置'
-                        qz.setAttribute('style', 'margin-left: 40px')
-                        e.querySelector('.state').appendChild(qz)
-                        qz.addEventListener('click', () => {
-                            //获取bvid并转为aid
-                            var href = e.querySelector('.t').getAttribute('href')
-                            var bvid = href.substring(href.length - 12);
-                            var aid = bv2av(bvid);
-                            //从cookie中获取csrf
-                            var reg = /(?<=bili_jct=).*(?=; s)/
-                            var csrf = reg.exec(document.cookie)[0];
-                            csrf = csrf.substring(0, 32);
-                            //发送请求
-                            $.ajax('https://api.bilibili.com/x/v2/history/toview/add', {
-                                type: 'POST',
-                                xhrFields: {
-                                    withCredentials: true // 携带跨域cookie  //单个设置
-                                },
-                                headers: {
-                                    cookie: document.cookie
-                                },
-                                data: { aid: aid, jsonp: 'jsonp', csrf: csrf },
-                                success: function(result) {
-                                    console.log(result);
-                                },
-                                error: function(err) {
-                                    alert(err)
-                                }
-                            });
-                            e.style.display = 'none'
-                        });
-                        if (i == items.length - 1) {
-                            first = false
-                        }
-                    }
-
-                    //---------------统计时长----------
-                    statistical(e);
-                    //大舅妈200 二舅妈200 幺姨200 三姨200 四姨200 伯伯伯妈400
+                //分离并统计分和秒
+                var arr = span.innerHTML.split(':');
+                //翻转数组
+                arr.reverse();
+                //处理失效视频            
+                if (arr[0] == '已失效') {
+                    return
                 }
-                setHtml(div)
-            }, 1000)
-        }
-        // Your code here...
+                //累加
+                var h = arr[2] == null ? 0 : parseInt(arr[2]) * 3600
+                var m = arr[1] == null ? 0 : parseInt(arr[1]) * 60
+                var s = parseInt(arr[0])
+                s = h + m + s;
+                //
+                var t = e.querySelector('.t').innerHTML;
+                if (zhixingshu != 0) {
+                    //截取5位之后的内容
+                    t = t.substring(5, t.length)
+                }
+                e.querySelector('.t').innerHTML = (s / totalDuration * 100).toFixed(2) + '%' + t;
+            })
+            zhixingshu += 1;
+        }, 1000)
+    };
+    // Your code here...
 })();
 /**
  * 创建顶层浮动面板
@@ -115,41 +106,56 @@ function addDiv(document) {
 }
 
 function setHtml(div) {
+    //获取上次储存的总时长
+    var ltd = localStorage.getItem('totalDuration');
+    if (zhixingshu == 0) {
+        ftd = totalDuration
+        ltd = totalDuration
+    }
+    localStorage.setItem('totalDuration', totalDuration);
+    //计算剩余百分比
+    var percent = (totalDuration / ftd * 100).toFixed(2);
+    //计算减少百分比
+    var percent2 = ((ltd - totalDuration) / ftd * 100).toFixed(2);
     //设置文本内容
-    const h = parseInt(totalDuration / 3600)
-    const minute = parseInt(totalDuration / 60 % 60)
-    const second = totalDuration % 60
-    const totalDuration2 = parseInt(totalDuration / 1.5)
-    const h2 = parseInt(totalDuration2 / 3600)
-    const minute2 = parseInt(totalDuration2 / 60 % 60)
-    const second2 = totalDuration2 % 60
-    const countTemp = count - shixiao - duoP
-    const pj = parseInt(totalDuration / countTemp)
+    var h = parseInt(totalDuration / 3600)
+    var minute = parseInt(totalDuration / 60 % 60)
+    var second = totalDuration % 60
+    var totalDuration2 = parseInt(totalDuration / 1.5)
+    var h2 = parseInt(totalDuration2 / 3600)
+    var minute2 = parseInt(totalDuration2 / 60 % 60)
+    var second2 = totalDuration2 % 60
+    var countTemp = count - shixiao - duoP
+    var pj = parseInt(totalDuration / countTemp)
     var ljz = pj - countTemp;
-    div.innerText = `总时长${h}小时${minute}分钟${second}秒
+    if (zhixingshu == 0) {
+        ftdhms = `${h}小时${minute}分钟${second}秒`
+    }
+    div.innerText = `总时长${ftdhms}
+    剩余总时长${h}小时${minute}分钟${second}秒
     预计需${h2}小时${minute2}分钟${second2}秒
     多P视频${duoP}个
     已失效${shixiao}个
     ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒
     临界值${parseInt(ljz / 60 % 60)}分${ljz % 60}秒
-    `;
+    减少${percent2}%，剩余${percent}%`;
 }
 /**
  * 统计函数
  * @param {Element} e - 要统计的元素
  */
 function statistical(e) {
-    var span = e.querySelector('.corner')
-        //处理多P视频
+    var span = e.querySelector('.corner');
+    //处理多P视频
     if (span == null) {
         duoP += 1
         return
     }
     //分离并统计分和秒
-    var arr = span.innerHTML.split(':')
-        //翻转数组
-    arr.reverse()
-        //处理失效视频            
+    var arr = span.innerHTML.split(':');
+    //翻转数组
+    arr.reverse();
+    //处理失效视频            
     if (arr[0] == '已失效') {
         shixiao += 1
         return
@@ -177,4 +183,47 @@ function bv2av(bvid) {
     bvidArr.splice(0, 3);
     const tmp = bvidArr.reduce((pre, bvidChar) => pre * BASE + BigInt(data.indexOf(bvidChar)), BigInt(0));
     return Number((tmp & MASK_CODE) ^ XOR_CODE);
+}
+/**
+ * 添加前置按钮
+ * @param {视频元素} e 
+ */
+function addQZ(e) {
+    if (zhixingshu == 0) {
+        //重置储存的总时长
+        localStorage.setItem('totalDuration', 0);
+        //------------设置【前置】按钮--------
+        var qz = document.createElement('button');
+        qz.innerHTML = '前置'
+        qz.setAttribute('style', 'margin-left: 40px')
+        e.querySelector('.state').appendChild(qz)
+        qz.addEventListener('click', () => {
+            //获取bvid并转为aid
+            var href = e.querySelector('.t').getAttribute('href')
+            var bvid = href.substring(href.length - 12);
+            var aid = bv2av(bvid);
+            //从cookie中获取csrf
+            var reg = /(?<=bili_jct=).*(?=; s)/
+            var csrf = reg.exec(document.cookie)[0];
+            csrf = csrf.substring(0, 32);
+            //发送请求
+            $.ajax('https://api.bilibili.com/x/v2/history/toview/add', {
+                type: 'POST',
+                xhrFields: {
+                    withCredentials: true // 携带跨域cookie  //单个设置
+                },
+                headers: {
+                    cookie: document.cookie
+                },
+                data: { aid: aid, jsonp: 'jsonp', csrf: csrf },
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function(err) {
+                    alert(err)
+                }
+            });
+            e.style.display = 'none'
+        });
+    }
 }

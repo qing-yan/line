@@ -126,18 +126,24 @@ function setHtml(div) {
     var minute2 = parseInt(totalDuration2 / 60 % 60)
     var second2 = totalDuration2 % 60
     var countTemp = count - shixiao - duoP
-    var pj = parseInt(totalDuration / countTemp)
-    var ljz = pj - countTemp;
+    var pj = parseInt(totalDuration / countTemp);
+    //计算平均时长变化临界值，计算公式(平均时长+1)(总数量-减少数量x)=总时长-变化时长y，化简y=(平均时长+1)x-总数量，一般x为1
+    var ljc = 1
+    var ljz = pj + 1 - countTemp;
+    if (ljz < 0) {
+        ljc = 2
+        ljz = (pj + 1) * ljc - countTemp;
+    }
     if (zhixingshu == 0) {
         ftdhms = `${h}小时${minute}分钟${second}秒`
     }
     div.innerText = `总时长${ftdhms}
-    剩余总时长${h}小时${minute}分钟${second}秒
+    剩余总时长${h}小时${minute}分钟${second}秒（${totalDuration}秒）
     预计需${h2}小时${minute2}分钟${second2}秒
     多P视频${duoP}个
     已失效${shixiao}个
-    ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒
-    临界值${parseInt(ljz / 60 % 60)}分${ljz % 60}秒
+    ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒（${pj}秒）
+    临界值${ljc}个视频${parseInt(ljz / 60 % 60)}分${ljz % 60}秒
     减少${percent2}%，剩余${percent}%`;
 }
 /**

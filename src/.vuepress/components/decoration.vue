@@ -45,6 +45,7 @@ export default {
                 {name: '住范-洗碗机', url: 'BV1EU4y1n7bj', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-橱柜', url: 'BV1MC4y1A74X', tags: ['厨房', '橱柜'], remark: '橱柜设计'},
                 
+                {name: '褚工-管道', url: 'BV1Pb421b7jK', tags: ['卫生间', ], remark: '反臭等'},
                 {name: '学长-马桶', url: 'BV17e41197ib', tags: ['卫生间', '马桶'], remark: '智能马桶'},
                 {name: '诡计-马桶', url: 'BV1jW4y177rw', tags: ['卫生间', '马桶'], remark: ''},
                 {name: '住范-浴霸', url: 'BV1Lp4y1N7ah', tags: ['卫生间'], remark: '浴霸安装'},
@@ -106,6 +107,7 @@ export default {
                 {name: '诡计-全都有', url: 'BV1NT4y1S7JL', tags: ['装修公司', '电器', '水电', '卫生间', '瓷砖', '美缝'], remark: '空调、窗户等等'},
                 {name: '砖哥-装修公司', url: 'BV1tN41137Bx', tags: ['装修公司', '合同'], remark: ''},
                 {name: '砖哥-装修公司', url: 'BV11B4y1f7zT', tags: ['装修公司', '报价单'], remark: '拆解报价单'},
+                {name: '砖哥-装修公司', url: 'BV1fC411g7ic', tags: ['装修公司'], remark: '拆解报价单'},
                 
                 {name: '阳仔-插座预留', url: '', tags: ['电器'], remark: 'https://i0.hdslb.com/bfs/note/e62c77e927c2a76318937e8d7db4b778a004b8cf.png@1048w_!web-dynamic.webp'},
                 {name: '学长-2023冰箱', url: 'BV15F4m1M7Fi', tags: ['电器'], remark: ''},
@@ -136,6 +138,7 @@ export default {
                 {name: '住范-智能照明', url: 'BV1YD4y1V7e3', tags: ['电器', '灯具'], remark: ''},
                 {name: '住范-空调', url: 'BV1YD4y1V7e3', tags: ['电器', '空调'], remark: '空调遮丑'},
 
+                {name: '老罗-预留尺寸', url: 'BV1VZ421J77L', tags: ['其他'], remark: ''},
                 {name: '住范-适老化', url: 'BV1794y1773H', tags: ['其他'], remark: '适老化改造'},
                 {name: '住范-户型', url: 'BV1Wk4y1R7wx', tags: ['其他'], remark: ''},
                 {name: '住范-户型', url: 'BV1Lf4y1U7JC', tags: ['其他'], remark: ''},

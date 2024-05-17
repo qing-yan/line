@@ -7,9 +7,11 @@
         </el-col>
         <!-- 主体 -->
         <el-col v-for="(item, index) in readyEvents" :key="index">
-            <a :href="item.url == '' ? null : item.url" target="_blank">
-                <span>{{index + 1 + ". " + item.address + ' ' + item.event}}</span>
+            <span>{{index + 1 + ". " + item.date + ' ' + item.address + ' '}}</span>
+            <a v-if="item.url != ''" :href="item.url" target="_blank">
+                <span>{{item.event}}</span>
             </a>
+            <span v-else>{{item.event}}</span>
             <span>：{{ item.remark }}</span>
             <el-tag size="small" v-for="(item, j) in item.tag" :key="j" style="margin: 0px 5px 5px 0px; cursor: pointer;" @click="clickTag(item)" :type="selectedTag === item ? 'success' : ''">{{item}}</el-tag>
         </el-col>
@@ -20,8 +22,23 @@ export default {
     data() {
         return {
             events: [
-                {date: '2024-5-1', address: '广东', event: '梅大高速塌方事件', url: '', tag: ['事故'], remark: '48人死亡'},
-                {date: '2024-4', address: '重庆', event: '胖猫跳江自杀事件', url: '', tag: ['女权'], remark: ''},
+                {date: '2024-05-03', address: '河南', event: '河南大学大礼堂失火', url: 'https://www.bilibili.com/video/BV1GJ4m1n7ej', tag: ['事故'], remark: '全国文保'},
+                {date: '2024-05-01', address: '广东', event: '梅大高速塌方事件', url: '', tag: ['事故'], remark: '48人死亡'},
+                {date: '2024-04-27', address: '江西', event: '王婆相亲觉醒姐事件', url: '', tag: ['女权'], remark: ''},
+                {date: '2024-04-11', address: '重庆', event: '胖猫跳江自杀事件', url: '', tag: ['女权'], remark: ''},
+                {date: '2024-04-00', address: '网络', event: '猫一杯秦朗法国丢作业事件', url: '', tag: ['网红'], remark: ''},
+                {date: '2024-03-28', address: '江西', event: '提灯定损事件', url: '', tag: [''], remark: ''},
+                {date: '2023-10-07', address: '世界', event: '巴以冲突', url: '', tag: ['战争'], remark: ''},
+                {date: '2023-08-24', address: '日本', event: '日本福岛核污水排海', url: '', tag: [''], remark: ''},
+                {date: '2023-06-11', address: '成都', event: '成都地铁污蔑偷拍事件', url: '', tag: ['女权'], remark: ''},
+                {date: '2023-06-07', address: '广州', event: '川大学生张薇污蔑偷拍事件', url: '', tag: ['女权'], remark: ''},
+                {date: '2023-03-29', address: '无锡', event: '女童母亲诉蛋糕店老板猥亵事件', url: 'https://www.bilibili.com/video/BV18s421K7kS', tag: ['女权'], remark: ''},
+                {date: '2022-02-24', address: '世界', event: '俄乌战争', url: '', tag: ['战争'], remark: ''},
+                {date: '2018-06-23', address: '泰国', event: '天临元年', url: 'https://www.bilibili.com/video/BV1oC411J7sW', tag: ['事故', '世界'], remark: ''},
+                {date: '2018-06-23', address: '泰国', event: '洞穴救援事件', url: 'https://www.bilibili.com/video/BV1oC411J7sW', tag: ['事故', '世界'], remark: ''},
+                {date: '2016-04-12', address: '网络', event: '魏则西事件', url: '', tag: ['事故'], remark: ''},
+                {date: '2011-03-11', address: '日本', event: '日本福岛海啸导致核电站事故', url: '', tag: ['事故'], remark: ''},
+                {date: '2008-05-12', address: '四川', event: '汶川地震', url: '', tag: ['天灾'], remark: ''},
             ],
             readyEvents: [],
             tags: [],

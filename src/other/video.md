@@ -27,8 +27,10 @@ category:
 10. [x] 杀人回忆
 11. [x] 功夫-周星驰
 12. [x] 加勒比海盗
+13. [x] [望乡](https://www.bilibili.com/video/BV1GE421j7Bc)
+14. [x] [孤注一掷](https://www.bilibili.com/video/BV18f421277A)
 
-## UCG
+## UGC
    
 
 1. [支持仅退款，新华社惨遭炸店](https://www.bilibili.com/video/BV11g4y1D7Cm)

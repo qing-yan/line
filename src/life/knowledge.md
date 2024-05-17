@@ -25,6 +25,7 @@ category:
 > - [瓶口结2](https://www.bilibili.com/video/BV1KJ4m1j7Dw/&t=106)活结
 > - [瓶口结](https://www.bilibili.com/video/BV1JG4y1g7yH)也可以捆物体
 > - [双合结](https://www.bilibili.com/video/BV1Jm411z7Jg)比猪蹄扣紧，需要折双
+> - [不知道什么结](https://www.bilibili.com/video/BV1jD421J7sE)
 
 ### 其他
 > - [篷布角固定](https://www.bilibili.com/video/BV117411J73H/?t=571)
@@ -60,3 +61,4 @@ category:
 - [结石操](https://www.bilibili.com/video/BV1fC4y1y7bk)也不知道有用没，先存着
 - [擤鼻涕注意事项](https://www.bilibili.com/video/BV1qi4y1h7hD)不要堵住使劲擤，可能导致中耳炎等，可用盐水冲洗
 - [洗衣机清洁](https://www.bilibili.com/video/BV1sa411k7zV)
+- [显卡](https://www.bilibili.com/video/BV1xE421j7Uv)

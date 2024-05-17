@@ -58,6 +58,7 @@ export default {
                 {name: '阳仔-马桶', url: 'BV1vL4y1V7bP', tags: ['卫生间', '马桶'], remark: '马桶移位防堵'},
                 {name: '阳仔-卫生间', url: 'BV1Ua411h7F6', tags: ['卫生间', '水电'], remark: ''},
                 
+                {name: '褚工-水电', url: 'BV1RJ4m1N7bk', tags: ['水电'], remark: ''},
                 {name: '住范-水电', url: 'BV1mY4y1s7mv', tags: ['水电'], remark: ''},
                 {name: '褚工-水电', url: 'BV1L1421S78c', tags: ['水电', '厨房', '卫生间', '防水'], remark: '八爪鱼布线，厕所自动补水'},
                 {name: '阳仔-水电', url: 'BV1PL411F7n5', tags: ['水电'], remark: '水管'},

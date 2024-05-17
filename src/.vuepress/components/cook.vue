@@ -26,6 +26,7 @@ export default {
                 /*
 
                 */
+                {name: '蒸鸡蛋', url: 'BV1Xx4y1z7Sj', tag: ['鸡蛋'], recommend: false, remark: ''},
                 {name: '醋炒蛋', url: 'BV14A4m1c7Gs', tag: ['鸡蛋'], recommend: false, remark: ''},
                 {name: '番茄炖牛肉', url: 'BV1LE421u7Lr', tag: ['牛肉', '土豆', '番茄', '胡萝卜'], recommend: false, remark: ''},
                 {name: '泡菜', url: 'BV1vv411173X', tag: ['泡菜'], recommend: false, remark: ''},

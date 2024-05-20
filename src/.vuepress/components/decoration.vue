@@ -41,6 +41,7 @@ export default {
                 {name: '阳仔-净水器', url: 'BV1j34y1L7h2', tags: ['厨房', '电器'], remark: ''},
                 {name: '阳仔-净水器', url: 'BV1r5411S7Gm', tags: ['厨房', '电器'], remark: '前置过滤器'},
                 {name: '诡计-净水器', url: 'BV1Jc411G7BP', tags: ['厨房', '电器'], remark: '全方案'},
+                {name: '诡计-净水器', url: 'BV141421X77B', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-微蒸烤一体机', url: 'BV1zQ4y1s7Zf', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-洗碗机', url: 'BV1EU4y1n7bj', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-橱柜', url: 'BV1MC4y1A74X', tags: ['厨房', '橱柜'], remark: '橱柜设计'},

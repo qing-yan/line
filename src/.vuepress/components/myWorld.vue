@@ -26,7 +26,7 @@ export default {
                 {date: '2024-05-01', address: '广东', event: '梅大高速塌方事件', url: '', tag: ['事故'], remark: '48人死亡'},
                 {date: '2024-04-27', address: '江西', event: '王婆相亲觉醒姐事件', url: '', tag: ['女权'], remark: ''},
                 {date: '2024-04-11', address: '重庆', event: '胖猫跳江自杀事件', url: '', tag: ['女权'], remark: ''},
-                {date: '2024-04-00', address: '网络', event: '猫一杯秦朗法国丢作业事件', url: '', tag: ['网红'], remark: ''},
+                {date: '2024-04-00', address: '中国', event: '猫一杯秦朗法国丢作业事件', url: '', tag: ['网红'], remark: ''},
                 {date: '2024-03-28', address: '江西', event: '提灯定损事件', url: '', tag: ['社会'], remark: ''},
                 {date: '2023-10-07', address: '世界', event: '巴以冲突', url: '', tag: ['战争'], remark: ''},
                 {date: '2023-08-24', address: '日本', event: '日本福岛核污水排海', url: '', tag: ['其他'], remark: ''},
@@ -35,8 +35,10 @@ export default {
                 {date: '2023-03-29', address: '无锡', event: '女童母亲诉蛋糕店老板猥亵事件', url: 'https://www.bilibili.com/video/BV18s421K7kS', tag: ['女权'], remark: ''},
                 {date: '2022-12-07', address: '中国', event: '新冠结束', url: '', tag: ['天灾'], remark: ''},
                 {date: '2022-02-24', address: '世界', event: '俄乌战争', url: '', tag: ['战争'], remark: ''},
+                {date: '2022-02-00', address: '北京', event: '谷爱凌', url: 'https://www.bilibili.com/video/BV1Nr421g7ht', tag: ['社会'], remark: '北京冬奥会'},
+                {date: '2020-11-00', address: '理塘', event: '丁真', url: '', tag: ['社会'], remark: ''},
                 {date: '2019-12-18', address: '武汉', event: '新冠', url: '', tag: ['天灾'], remark: '李文亮医生'},
-                {date: '2018-06-23', address: '泰国', event: '天临元年', url: 'https://www.bilibili.com/video/BV1oC411J7sW', tag: ['事故', '世界'], remark: ''},
+                {date: '2018-06-23', address: '中国', event: '天临元年', url: 'https://www.bilibili.com/video/BV1oC411J7sW', tag: ['事故', '世界'], remark: ''},
                 {date: '2018-06-23', address: '泰国', event: '洞穴救援事件', url: 'https://www.bilibili.com/video/BV1oC411J7sW', tag: ['事故', '世界'], remark: ''},
                 {date: '2016-04-12', address: '网络', event: '魏则西事件', url: '', tag: ['事故'], remark: ''},
                 {date: '2011-03-11', address: '日本', event: '日本福岛海啸导致核电站事故', url: '', tag: ['事故'], remark: ''},
@@ -54,11 +56,14 @@ export default {
     },
     methods: {
         init() {
-           this.readyEvents = JSON.parse(JSON.stringify(this.events))
-           //初始化标签
-           const set = new Set()
-           this.events.forEach(item => item.tag.forEach(ingr => set.add(ingr)))
-           this.tags = Array.from(set).sort()
+            this.readyEvents = this.events
+            // this.readyEvents = JSON.parse(JSON.stringify(this.events))
+            //初始化标签
+            const set = new Set()
+            this.events.forEach(item => item.tag.forEach(ingr => {
+                set.add(ingr)
+            }))
+            this.tags = Array.from(set).sort()
         },
         //点击标签时实现选择/取消选择
         clickTag(tag) {

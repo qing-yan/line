@@ -32,7 +32,8 @@ export default {
                 {name: '住范-床垫', url: 'BV1rt4y19782', tags: ['卧室', '床垫'], remark: ''},
                 {name: '住范-枕头', url: 'BV1x64y167Xe', tags: ['卧室', '枕头'], remark: ''},
                 {name: '住范-床', url: 'BV19P411S7C9', tags: ['卧室', '床'], remark: ''},
-
+                
+                {name: '砖哥-前置过滤器', url: 'BV1Dm421K78S', tags: ['厨房', '电器'], remark: ''},
                 {name: '学长-净水器、前置过滤器', url: 'BV1j14y1c7HK', tags: ['厨房', '电器'], remark: ''},
                 {name: '学长-即热净水器、前置过滤器', url: 'BV1fd4y167wX', tags: ['厨房', '电器'], remark: ''},
                 {name: '老罗-洗碗机', url: 'BV1uK421Y7Jg', tags: ['厨房', '电器'], remark: ''},

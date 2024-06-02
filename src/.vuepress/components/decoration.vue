@@ -42,6 +42,7 @@ export default {
                 {name: '阳仔-净水器', url: 'BV1j34y1L7h2', tags: ['厨房', '电器'], remark: ''},
                 {name: '阳仔-净水器', url: 'BV1r5411S7Gm', tags: ['厨房', '电器'], remark: '前置过滤器'},
                 {name: '诡计-净水器', url: 'BV1Jc411G7BP', tags: ['厨房', '电器'], remark: '全方案'},
+                {name: '诡计-净水器', url: 'BV141421X77B', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-微蒸烤一体机', url: 'BV1zQ4y1s7Zf', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-洗碗机', url: 'BV1EU4y1n7bj', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-橱柜', url: 'BV1MC4y1A74X', tags: ['厨房', '橱柜'], remark: '橱柜设计'},
@@ -140,6 +141,7 @@ export default {
                 {name: '住范-智能照明', url: 'BV1YD4y1V7e3', tags: ['电器', '灯具'], remark: ''},
                 {name: '住范-空调', url: 'BV1YD4y1V7e3', tags: ['电器', '空调'], remark: '空调遮丑'},
 
+                {name: '阳仔-其他', url: 'BV19F4m1P7gB', tags: ['其他'], remark: '工具准备'},
                 {name: '老罗-预留尺寸', url: 'BV1VZ421J77L', tags: ['其他'], remark: ''},
                 {name: '住范-适老化', url: 'BV1794y1773H', tags: ['其他'], remark: '适老化改造'},
                 {name: '住范-户型', url: 'BV1Wk4y1R7wx', tags: ['其他'], remark: ''},

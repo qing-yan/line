@@ -21,7 +21,8 @@ var shixiao = 0;
 //执行次数统计
 var zhixingshu = 0;
 var ftd = 0,
-    ftdhms = '';
+    ftdhms = '',
+    ftdtime = 0;
 (function() {
     'use strict';
     window.onload = () => {
@@ -118,13 +119,8 @@ function setHtml(div) {
     //计算减少百分比
     var percent2 = ((ltd - totalDuration) / ftd * 100).toFixed(2);
     //设置文本内容
-    var h = parseInt(totalDuration / 3600)
-    var minute = parseInt(totalDuration / 60 % 60)
-    var second = totalDuration % 60
+    var date_str = time2date(totalDuration)
     var totalDuration2 = parseInt(totalDuration / 1.5)
-    var h2 = parseInt(totalDuration2 / 3600)
-    var minute2 = parseInt(totalDuration2 / 60 % 60)
-    var second2 = totalDuration2 % 60
     var countTemp = count - shixiao - duoP
     var pj = parseInt(totalDuration / countTemp);
     //计算平均时长变化临界值，计算公式(平均时长+1)(总数量-减少数量x)=总时长-变化时长y，化简y=(平均时长+1)x-总数量，一般x为1
@@ -135,13 +131,13 @@ function setHtml(div) {
         ljz = (pj + 1) * ljc - countTemp;
     }
     if (zhixingshu == 0) {
-        ftdhms = `${h}小时${minute}分钟${second}秒`
+        ftdhms = date_str
+        ftdtime = totalDuration
     }
     div.innerText = `总时长${ftdhms}
-    剩余总时长${h}小时${minute}分钟${second}秒（${totalDuration}秒）
-    预计需${h2}小时${minute2}分钟${second2}秒
-    多P视频${duoP}个
-    已失效${shixiao}个
+    剩余总时长${date_str}（${totalDuration}秒），减少${time2date(ftdtime - totalDuration)}
+    预计需${time2date(totalDuration2)}
+    多P视频${duoP}个，已失效${shixiao}个
     ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒（${pj}秒）
     临界值${ljc}个视频${parseInt(ljz / 60 % 60)}分${ljz % 60}秒
     减少${percent2}%，剩余${percent}%`;
@@ -232,4 +228,11 @@ function addQZ(e) {
             e.style.display = 'none'
         });
     }
+}
+
+function time2date(time) {
+    var h = parseInt(time / 3600)
+    var m = parseInt(time / 60 % 60)
+    var s = time % 60
+    return `${h}时${m}分${s}秒`
 }

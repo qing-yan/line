@@ -34,6 +34,7 @@ export default {
                 {date: '2023-06-07', address: '广州', event: '川大学生张薇污蔑偷拍事件', url: '', tag: ['女权'], remark: ''},
                 {date: '2023-03-29', address: '无锡', event: '女童母亲诉蛋糕店老板猥亵事件', url: 'https://www.bilibili.com/video/BV18s421K7kS', tag: ['女权'], remark: ''},
                 {date: '2022-12-07', address: '中国', event: '新冠结束', url: '', tag: ['天灾'], remark: ''},
+                {date: '2022-07-08', address: '日本', event: '首相安倍晋三被枪击身亡', url: 'https://www.bilibili.com/video/BV1s94y1X7jH', tag: ['政治'], remark: ''},
                 {date: '2022-02-24', address: '世界', event: '俄乌战争', url: '', tag: ['战争'], remark: ''},
                 {date: '2022-02-00', address: '北京', event: '谷爱凌', url: 'https://www.bilibili.com/video/BV1Nr421g7ht', tag: ['社会'], remark: '北京冬奥会'},
                 {date: '2020-11-00', address: '理塘', event: '丁真', url: '', tag: ['社会'], remark: ''},

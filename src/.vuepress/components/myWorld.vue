@@ -30,7 +30,7 @@ export default {
                 {date: '2024-03-28', address: '江西', event: '提灯定损事件', url: '', tag: ['社会'], remark: ''},
                 {date: '2023-10-07', address: '世界', event: '巴以冲突', url: '', tag: ['战争'], remark: ''},
                 {date: '2023-08-24', address: '日本', event: '日本福岛核污水排海', url: '', tag: ['其他'], remark: ''},
-                {date: '2023-06-11', address: '成都', event: '成都地铁污蔑偷拍事件', url: '', tag: ['女权'], remark: ''},
+                {date: '2023-06-11', address: '成都', event: '成都地铁污蔑偷拍事件', url: 'https://www.bilibili.com/video/BV17t421K7G1', tag: ['女权'], remark: ''},
                 {date: '2023-06-07', address: '广州', event: '川大学生张薇污蔑偷拍事件', url: '', tag: ['女权'], remark: ''},
                 {date: '2023-03-29', address: '无锡', event: '女童母亲诉蛋糕店老板猥亵事件', url: 'https://www.bilibili.com/video/BV18s421K7kS', tag: ['女权'], remark: ''},
                 {date: '2022-12-07', address: '中国', event: '新冠结束', url: '', tag: ['天灾'], remark: ''},

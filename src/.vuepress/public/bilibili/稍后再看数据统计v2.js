@@ -38,7 +38,7 @@ var data = {};
  */
 function func2() {
     //添加面板
-    var div =  addDiv(document);
+    var div = addDiv(document);
     initData();
     //每秒统计一次
     setInterval(() => {
@@ -47,12 +47,16 @@ function func2() {
         if (data.video_count_1 == videos.length) {
             return
         }
+        //重置部分数据
+        data.total_time_1 = 0;
+        data.dp = 0;
+        data.sx = 0;
         //是否首次执行
         var first = data.video_count_0 == 0;
         //数据统计
         videos.forEach(video => {
             statistical(video)
-        })
+        });
         //数据记录
         data.video_count_1 = videos.length;
         if (first) {
@@ -64,6 +68,22 @@ function func2() {
 
 
     }, 1000)
+}
+/**
+ * 更新面板信息
+ * @param {数据容器} div 
+ */
+function setHtml(div) {
+    var watched_time = data.total_time_0 - data.total_time_1;
+    var watched_per = (watched_time / data.total_time_0 * 100).toFixed(2);
+    div.innerText = `总计时长${time2date(data.total_time_0)}(${data.total_time_0}秒)
+    剩余时长${time2date(data.total_time_1)}(${data.total_time_1}秒)(${100 - watched_per}%)
+    观看时长${time2date(watched_time)}(${watched_time}秒)(${watched_per}%)
+    多P视频${data.dp}
+    失效视频${data.sx}
+    平均时长${time2date(parseInt(data.total_time_1 / (data.video_count_1 - data.dp - data.sx)))}
+    https://www.bilibili.com/video/${data.bv}
+    `;
 }
 /**
  * 统计函数
@@ -100,14 +120,15 @@ function func1() {
         //------------设置【前置】按钮--------
         var qz = addButton(e, '前置');
         qz.addEventListener('click', () => {
-            send(getAV(e), getCsrf());
-            e.style.display = 'none'
-        })
-        //------------设置【BV】按钮--------
+                send(getAV(e), getCsrf());
+                e.style.display = 'none'
+            })
+            //------------设置【BV】按钮--------
         var bv = addButton(e, 'BV');
         bv.addEventListener('click', () => {
             //获取并复制BV号
-            copy(getBV(e));
+            data.bv = getBV(e);
+            copy(data.bv);
         });
     })
 }
@@ -116,13 +137,13 @@ function func1() {
  */
 function initData() {
     data = {
-        total_time_0: 0,//初始化时总时长，即网页加载时的总时长，单位秒
-        total_time_1: 0,//实时总时长
-        video_count_0: 0,//初始化时视频数量
-        video_count_1: 0,//实时视频数量
-        dp: 0,//多P视频数量
-        sx: 0,//失效视频数量
-    
+        total_time_0: 0, //初始化时总时长，即网页加载时的总时长，单位秒
+        total_time_1: 0, //实时总时长
+        video_count_0: 0, //初始化时视频数量
+        video_count_1: 0, //实时视频数量
+        dp: 0, //多P视频数量
+        sx: 0, //失效视频数量
+        bv: '', //BV号
     };
 }
 /**
@@ -185,7 +206,7 @@ function addButton(video, innerHTML) {
 function getBV(video) {
     //获取视频链接
     var href = video.querySelector('.t').getAttribute('href')
-    //获取bvid
+        //获取bvid
     return href.substring(href.length - 12);
 }
 /**
@@ -224,46 +245,7 @@ function addDiv(document) {
     document.body.appendChild(div)
     return div
 }
-/**
- * 更新面板信息
- * @param {数据容器} div 
- */
-function setHtml(div) {
-    //获取上次储存的总时长
-    var ltd = localStorage.getItem('totalDuration');
-    if (zhixingshu == 0) {
-        ftd = totalDuration
-        ltd = totalDuration
-    }
-    localStorage.setItem('totalDuration', totalDuration);
-    //计算剩余百分比
-    var percent = (totalDuration / ftd * 100).toFixed(2);
-    //计算减少百分比
-    var percent2 = ((ltd - totalDuration) / ftd * 100).toFixed(2);
-    //设置文本内容
-    var date_str = time2date(totalDuration)
-    var totalDuration2 = parseInt(totalDuration / 1.5)
-    var countTemp = count - shixiao - duoP
-    var pj = parseInt(totalDuration / countTemp);
-    //计算平均时长变化临界值，计算公式(平均时长+1)(总数量-减少数量x)=总时长-变化时长y，化简y=(平均时长+1)x-总数量，一般x为1
-    var ljc = 1
-    var ljz = pj + 1 - countTemp;
-    if (ljz < 0) {
-        ljc = 2
-        ljz = (pj + 1) * ljc - countTemp;
-    }
-    if (zhixingshu == 0) {
-        ftdhms = date_str
-        ftdtime = totalDuration
-    }
-    div.innerText = `总时长${ftdhms}
-    剩余总时长${date_str}（${totalDuration}秒），减少${time2date(ftdtime - totalDuration)}
-    预计需${time2date(totalDuration2)}
-    多P视频${duoP}个，已失效${shixiao}个
-    ${countTemp}个视频平均时长${parseInt(pj / 60 % 60)}分${pj % 60}秒（${pj}秒）
-    临界值${ljc}个视频${parseInt(ljz / 60 % 60)}分${ljz % 60}秒
-    减少${percent2}%，剩余${percent}%`;
-}
+
 
 /**
  * bv号转av号

@@ -19,9 +19,8 @@ var data = {};
         modify_footer();
         //获取视频列表
         var videos = getVideos();
-        //数据记录
-        data.video_count_1 = videos.length;
         var csrf = getCsrf();
+        initData();
         videos.forEach(e => {
             var aid = getAV(e);
             //------------设置【前置】按钮--------
@@ -46,11 +45,17 @@ var data = {};
                 mark_up(e);
                 update_up_list(null);
                 update_video_info(e);
+                update_videos_info();
                 setTimeout(() => {
                     send_del(aid, csrf);
                 }, 500);
             }
-        })
+        });
+        //数据记录
+        data.video_count_1 = videos.length;
+        data.total_time_0 = data.total_time_1;
+        //更新信息
+        update_videos_info();
     };
 })();
 
@@ -225,43 +230,8 @@ function update_up_list(up_list_div) {
 }
 
 function update_video_info(video) {
-    //重置部分数据
-    data.total_time_1 = 0;
-    data.dp = 0;
-    data.sx = 0;
-    //是否首次执行
-    var first = data.video_count_0 == 0;
-    //数据统计
-    statistical(video);
-    if (first) {
-        data.video_count_0 = data.video_count_1;
-        data.total_time_0 = data.total_time_1;
-    }
-    //更新信息
-    update_videos_info();
-}
-/**
- * 更新面板信息
- */
-function update_videos_info() {
-    var div = document.querySelector('#videos_info');
-    var watched_time = data.total_time_0 - data.total_time_1;
-    var watched_per = (watched_time / data.total_time_0 * 100).toFixed(2);
-    div.innerText = `总计时长${time2date(data.total_time_0)}(${data.total_time_0}秒)
-    剩余时长${time2date(data.total_time_1)}(${data.total_time_1}秒)(${100 - watched_per}%)
-    观看时长${time2date(watched_time)}(${watched_time}秒)(${watched_per}%)
-    多P视频${data.dp}
-    失效视频${data.sx}
-    平均时长${time2date(parseInt(data.total_time_1 / (data.video_count_1 - data.dp - data.sx)))}
-    https://www.bilibili.com/video/${data.bv}
-    `;
-}
-/**
- * 统计函数
- * @param {Element} e - 要统计的元素
- */
-function statistical(e) {
-    var span = e.querySelector('.corner');
+    //时间加和
+    var span = video.querySelector('.corner');
     //处理多P视频
     if (span == null) {
         data.dp += 1
@@ -281,7 +251,24 @@ function statistical(e) {
     var m = arr[1] == null ? 0 : parseInt(arr[1]) * 60
     var s = parseInt(arr[0])
     data.total_time_1 += h + m + s
-};
+}
+/**
+ * 更新面板信息
+ */
+function update_videos_info() {
+    var div = document.querySelector('#videos_info');
+    var watched_time = data.total_time_0 - data.total_time_1;
+    var watched_per = (watched_time / data.total_time_0 * 100).toFixed(2);
+    div.innerText = `总计时长${time2date(data.total_time_0)}(${data.total_time_0}秒)
+    剩余时长${time2date(data.total_time_1)}(${data.total_time_1}秒)(${100 - watched_per}%)
+    观看时长${time2date(watched_time)}(${watched_time}秒)(${watched_per}%)
+    多P视频${data.dp}
+    失效视频${data.sx}
+    平均时长${time2date(parseInt(data.total_time_1 / (data.video_count_1 - data.dp - data.sx)))}
+    https://www.bilibili.com/video/${data.bv}
+    `;
+}
+
 
 /**
  * up主列表转为字符串

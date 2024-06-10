@@ -37,22 +37,39 @@ var data = {};
                 copy(data.bv);
             });
             //------------覆盖删除按钮事件--------
-            mark_up(e);
-            update_up_list(null);
-            update_video_info(e);
+            get_video_info(e);
             var del = e.querySelector('i.btn-del.icon');
             del.onclick = () => {
                 mark_up(e);
                 update_up_list(null);
-                update_video_info(e);
+                //
+                var span = e.querySelector('.corner');
+                //处理多P视频
+                if (span == null) {
+                    data.dp -= 1
+                } else {
+                    //分离并统计分和秒
+                    var arr = span.innerHTML.split(':');
+                    arr.reverse();
+                    //处理失效视频            
+                    if (arr[0] == '已失效') {
+                        data.sx -= 1
+                    } else {
+                        data.total_time_1 -= sum_time(arr);
+                    }
+                }
+                data.video_count_1 -= 1;
+    //
                 update_videos_info();
                 setTimeout(() => {
                     send_del(aid, csrf);
                 }, 500);
             }
         });
+        update_up_list(null);
         //数据记录
         data.video_count_1 = videos.length;
+        data.video_count_0 = videos.length;
         data.total_time_0 = data.total_time_1;
         //更新信息
         update_videos_info();
@@ -211,7 +228,7 @@ function update_up_list(up_list_div) {
     var up_list_pre = up_list.slice(up_list.length - 10, up_list.length).reverse();
     var up_list_pre_str = up_list2str(up_list_pre);
     //获取后10个up主，并反转排序
-    var up_list_last = up_list.slice(0, 10).reverse();
+    var up_list_last = up_list.slice(0, 10);
     var up_list_last_str = up_list2str(up_list_last);
     //更新footer
     up_list_div.innerHTML = `
@@ -228,8 +245,12 @@ function update_up_list(up_list_div) {
     `;
     console.log(up_list.innerHTML);
 }
-
-function update_video_info(video) {
+/**
+ * 获取视频信息并储存
+ * @param {*} video 
+ * @returns 
+ */
+function get_video_info(video) {
     //时间加和
     var span = video.querySelector('.corner');
     //处理多P视频
@@ -247,11 +268,43 @@ function update_video_info(video) {
         return
     }
     //累加
+    data.total_time_1 += sum_time(arr);
+}
+/**
+ * 时间加和
+ */
+function sum_time(arr) {
     var h = arr[2] == null ? 0 : parseInt(arr[2]) * 3600
     var m = arr[1] == null ? 0 : parseInt(arr[1]) * 60
     var s = parseInt(arr[0])
-    data.total_time_1 += h + m + s
+    return h + m + s
 }
+/**上林新桂年年发，不许平人折一枝。
+ * 判断是否duoP或失效视频
+ * @param {*} video 
+ * @returns 
+ */
+function if_dp_sx(video) {
+    //时间加和
+    var span = video.querySelector('.corner');
+    //处理多P视频
+    if (span == null) {
+        data.dp += 1
+        return
+    }
+    //分离并统计分和秒
+    var arr = span.innerHTML.split(':');
+    //翻转数组
+    arr.reverse();
+    //处理失效视频            
+    if (arr[0] == '已失效') {
+        data.sx += 1
+        return
+    }
+    return arr;
+}
+
+
 /**
  * 更新面板信息
  */
@@ -267,6 +320,9 @@ function update_videos_info() {
     平均时长${time2date(parseInt(data.total_time_1 / (data.video_count_1 - data.dp - data.sx)))}
     https://www.bilibili.com/video/${data.bv}
     `;
+    // div.innerText = `
+    //     ${JSON.stringify(data)}
+    // `
 }
 
 

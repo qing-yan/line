@@ -59,7 +59,7 @@ var data = {};
                     }
                 }
                 data.video_count_1 -= 1;
-    //
+                //
                 update_videos_info();
                 setTimeout(() => {
                     send_del(aid, csrf);
@@ -106,9 +106,9 @@ function getVideos() {
  * @returns csrf
  */
 function getCsrf() {
-    var reg = /(?<=bili_jct=).*(?=; s)/;
+    var reg = /(?<=bili_jct=).{32}/;
     var csrf = reg.exec(document.cookie)[0];
-    return csrf.substring(0, 32);
+    return csrf;
 }
 /**
  * 获取AV号

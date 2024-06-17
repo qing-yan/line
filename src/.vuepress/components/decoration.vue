@@ -47,6 +47,7 @@ export default {
                 {name: '住范-洗碗机', url: 'BV1EU4y1n7bj', tags: ['厨房', '电器'], remark: ''},
                 {name: '住范-橱柜', url: 'BV1MC4y1A74X', tags: ['厨房', '橱柜'], remark: '橱柜设计'},
                 
+                {name: '老罗-马桶', url: 'BV14Z421H7BH', tags: ['卫生间', '马桶'], remark: '智能马桶'},
                 {name: '褚工-管道', url: 'BV1Pb421b7jK', tags: ['卫生间', ], remark: '反臭等'},
                 {name: '学长-马桶', url: 'BV17e41197ib', tags: ['卫生间', '马桶'], remark: '智能马桶'},
                 {name: '诡计-马桶', url: 'BV1jW4y177rw', tags: ['卫生间', '马桶'], remark: ''},

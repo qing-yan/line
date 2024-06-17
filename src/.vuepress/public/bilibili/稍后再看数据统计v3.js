@@ -41,7 +41,7 @@ var data = {};
             var del = e.querySelector('i.btn-del.icon');
             del.onclick = () => {
                 mark_up(e);
-                update_up_list(null);
+                update_up_list(false);
                 //
                 var span = e.querySelector('.corner');
                 //处理多P视频
@@ -66,7 +66,7 @@ var data = {};
                 }, 500);
             }
         });
-        update_up_list(null);
+        update_up_list(true);
         //数据记录
         data.video_count_1 = videos.length;
         data.video_count_0 = videos.length;
@@ -194,7 +194,6 @@ function mark_up(video) {
     if (up_list == null) {
         up_list = '[]';
     }
-    console.log(up_list);
     up_list = JSON.parse(up_list);
     //添加up主
     var up_local = up_list.find(e => e.name == up)
@@ -212,30 +211,40 @@ function mark_up(video) {
 }
 /**
  * 更新footer信息
- * @param {*} up_list_div 
  * @returns 
  */
-function update_up_list(up_list_div) {
-    if (up_list_div == null) {
-        up_list_div = document.querySelector('#up_list');
-    }
+function update_up_list(if_first) {
+    var up_list_div = document.querySelector('#up_list');
     var up_list = localStorage.getItem('up_list');
     if (up_list == null) {
         return;
     };
     up_list = JSON.parse(up_list);
+    var last_up = get_last_up(if_first);
+    var last_up_index = up_list.length - up_list.findIndex(e => e.name == last_up);
     //获取前10个up主，并反转排序
-    var up_list_pre = up_list.slice(up_list.length - 10, up_list.length).reverse();
-    var up_list_pre_str = up_list2str(up_list_pre);
-    //获取后10个up主，并反转排序
-    var up_list_last = up_list.slice(0, 10);
-    var up_list_last_str = up_list2str(up_list_last);
+    var up_list_pre_str = up_list2str(up_list.slice(up_list.length - 10, up_list.length).reverse(), last_up);
+    //获取11-20
+    var up_list_pre_20_str = up_list2str(up_list.slice(up_list.length - 20, up_list.length - 10).reverse(), last_up);
+    //获取21-30
+    var up_list_pre_30_str = up_list2str(up_list.slice(up_list.length - 30, up_list.length - 20).reverse(), last_up);
+    //获取后10个up主
+    var up_list_last_str = up_list2str(up_list.slice(0, 10), last_up);
+    
     //更新footer
     up_list_div.innerHTML = `
     <div>
         <div style='display: inline-block;'>
-            <span>最近更新up主列表</span>
+            <span>1-10up主列表${last_up_index}</span>
             ${up_list_pre_str}
+        </div>
+        <div style='display: inline-block;'>
+            <span>11-20up主列表</span>
+            ${up_list_pre_20_str}
+        </div>
+        <div style='display: inline-block;'>
+            <span>11-20up主列表</span>
+            ${up_list_pre_30_str}
         </div>
         <div style='display: inline-block;'>
             <span>久未更新up主列表</span>
@@ -243,7 +252,32 @@ function update_up_list(up_list_div) {
         </div>
     </div>
     `;
-    console.log(up_list.innerHTML);
+}
+function get_last_up(if_first) {
+    var videos = getVideos();
+    var up_name = '';
+    //反向循环
+    for (var i = videos.length - 1; i >= 0; i--) {
+        var video = videos[i];
+        if (video.style.display == 'none') {
+            //隐藏视频跳过
+            continue;
+        }
+        if (if_first) {
+            //获取up主信息
+            up_name = video.querySelector('a.user').innerText;
+            break;
+        } else {
+            if_first = true;
+            continue;
+        }
+        
+    }
+    var up_list = localStorage.getItem('up_list');
+    if (up_list == null) {
+        return '';
+    }
+    return up_name;
 }
 /**
  * 获取视频信息并储存
@@ -329,13 +363,18 @@ function update_videos_info() {
 /**
  * up主列表转为字符串
  * @param {*} up_list 
- * @param {*} str 
- * @returns 
+ * @returns str
  */
-function up_list2str(up_list) {
+function up_list2str(up_list, last_up) {
+    console.log(last_up);
     var str = '';
     up_list.forEach(e => {
-        str += `<div>${e.datatime} ${e.count} ${e.name}</div>`
+        if (e.name == last_up) {
+            str += `<div style="color:red">${e.datatime} ${e.count} ${e.name}</div>`
+            return;
+        } else {
+            str += `<div>${e.datatime} ${e.count} ${e.name}</div>`
+        }
     })
     return str;
 }

@@ -22,6 +22,7 @@ export default {
     data() {
         return {
             events: [
+                {date: '2024-06-09', address: '成都', event: '女子被女住户当保安面杀害', url: 'https://www.bilibili.com/video/BV17T421e7mE', tag: ['女权'], remark: '需结合其他事件看[我们没要你救](https://www.bilibili.com/video/BV1Su4m1M7fr)'},
                 {date: '2024-05-03', address: '河南', event: '河南大学大礼堂失火', url: 'https://www.bilibili.com/video/BV1GJ4m1n7ej', tag: ['事故'], remark: '全国文保'},
                 {date: '2024-05-01', address: '广东', event: '梅大高速塌方事件', url: '', tag: ['事故'], remark: '48人死亡'},
                 {date: '2024-04-27', address: '江西', event: '王婆相亲觉醒姐事件', url: '', tag: ['女权'], remark: ''},
@@ -37,6 +38,7 @@ export default {
                 {date: '2022-07-08', address: '日本', event: '首相安倍晋三被枪击身亡', url: 'https://www.bilibili.com/video/BV1s94y1X7jH', tag: ['政治'], remark: ''},
                 {date: '2022-02-24', address: '世界', event: '俄乌战争', url: '', tag: ['战争'], remark: ''},
                 {date: '2022-02-00', address: '北京', event: '谷爱凌', url: 'https://www.bilibili.com/video/BV1Nr421g7ht', tag: ['社会'], remark: '北京冬奥会'},
+                {date: '2021-08-31', address: '西安', event: '地铁保安拖拽女子下车事件', url: '', tag: ['女权'], remark: '此事很好地告诉我们保安没有执法权，回旋镖在2024年6月9日'},
                 {date: '2020-11-00', address: '理塘', event: '丁真', url: '', tag: ['社会'], remark: ''},
                 {date: '2019-12-18', address: '武汉', event: '新冠', url: '', tag: ['天灾'], remark: '李文亮医生'},
                 {date: '2018-06-23', address: '中国', event: '天临元年', url: 'https://www.bilibili.com/video/BV1oC411J7sW', tag: ['事故', '世界'], remark: ''},

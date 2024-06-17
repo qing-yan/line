@@ -15,22 +15,23 @@ category:
 
 
 ## 电影
-1. [x] 让子弹飞
-2. [x] 沉默的羔羊
-3. [x] 蝴蝶效应
-4. [x] 黑客帝国
-5. [x] 饮食男女
-6. [x] 两杆大烟枪
-7. [x] 看不见的客人
-8. [x] 哈利波特与死亡圣器-下
-9. [x] 禁闭岛
-10. [x] 杀人回忆
-11. [x] 功夫-周星驰
-12. [x] 加勒比海盗
-13. [x] [望乡](https://www.bilibili.com/video/BV1GE421j7Bc)
-14. [x] [孤注一掷](https://www.bilibili.com/video/BV18f421277A)
-15. [x] [流浪地球2](https://www.bilibili.com/video/BV11y411h7EE)
-16. [x] [色戒](https://www.bilibili.com/video/BV1GT421q7D5)
+- [x] 让子弹飞
+- [x] 沉默的羔羊
+- [x] 蝴蝶效应
+- [x] 黑客帝国
+- [x] 饮食男女
+- [x] 两杆大烟枪
+- [x] 看不见的客人
+- [x] 哈利波特与死亡圣器-下
+- [x] 禁闭岛
+- [x] 杀人回忆
+- [x] 功夫-周星驰
+- [x] 加勒比海盗
+- [x] [望乡](https://www.bilibili.com/video/BV1GE421j7Bc)
+- [x] [孤注一掷](https://www.bilibili.com/video/BV18f421277A)
+- [x] [流浪地球2](https://www.bilibili.com/video/BV11y411h7EE)
+- [x] [色戒](https://www.bilibili.com/video/BV1GT421q7D5)
+- [x] [血观音-食影双修](https://www.bilibili.com/video/BV1Kw4m1i7j6)
 
 ## 人物
 - [李白-江湖举人](https://www.bilibili.com/video/BV1E4421976F)
@@ -39,7 +40,8 @@ category:
 ## 历史
 - [吃人-浪花姜](https://www.bilibili.com/video/BV177421o7T3)
 - [铁西区-一目十影](https://www.bilibili.com/video/BV1iy411B7ZH)
-- [农民工-一目十影](https://www.bilibili.com/video/BV1Qg4y1c7v3)
+- [农民工](https://www.bilibili.com/video/BV1Qg4y1c7v3)
+- [麦当劳邪教杀人事件-老张的精分世界](https://www.bilibili.com/video/BV1ef421D7uj)
 
 ## 自然
 - [菊科-龙女之声](https://www.bilibili.com/video/BV1Gr421F7vH)

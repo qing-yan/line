@@ -230,12 +230,12 @@ function update_up_list(if_first) {
     var up_list_pre_30_str = up_list2str(up_list.slice(up_list.length - 30, up_list.length - 20).reverse(), last_up);
     //获取后10个up主
     var up_list_last_str = up_list2str(up_list.slice(0, 10), last_up);
-    
+
     //更新footer
     up_list_div.innerHTML = `
     <div>
         <div style='display: inline-block;'>
-            <span>1-10up主列表${last_up_index}</span>
+            <span>1-10up主列表${last_up_index}/${up_list.length}</span>
             ${up_list_pre_str}
         </div>
         <div style='display: inline-block;'>
@@ -253,6 +253,7 @@ function update_up_list(if_first) {
     </div>
     `;
 }
+
 function get_last_up(if_first) {
     var videos = getVideos();
     var up_name = '';
@@ -271,7 +272,7 @@ function get_last_up(if_first) {
             if_first = true;
             continue;
         }
-        
+
     }
     var up_list = localStorage.getItem('up_list');
     if (up_list == null) {

@@ -1,0 +1,1 @@
+import{aP as t,P as r,Q as a,S as n}from"./framework-270ea3de.js";const l={},o=["src"];function s(e,c){return r(),a("div",null,[n("iframe",{src:e.$withBase("/plant.html"),width:"100%",height:"2500",frameborder:"0",scrolling:"No",leftmargin:"0",topmargin:"0"},null,8,o)])}const _=t(l,[["render",s],["__file","plant.html.vue"]]);export{_ as default};

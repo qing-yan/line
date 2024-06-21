@@ -29,6 +29,9 @@ export default {
                 {date: '2024-04-11', address: '重庆', event: '胖猫跳江自杀事件', url: '', tag: ['女权'], remark: ''},
                 {date: '2024-04-00', address: '中国', event: '猫一杯秦朗法国丢作业事件', url: '', tag: ['网红'], remark: ''},
                 {date: '2024-03-28', address: '江西', event: '提灯定损事件', url: '', tag: ['社会'], remark: ''},
+                
+                {date: '2023-12-11', address: '死亡', event: '周海媚去世', url: '', tag: ['死亡'], remark: ''},
+
                 {date: '2023-10-07', address: '世界', event: '巴以冲突', url: '', tag: ['战争'], remark: ''},
                 {date: '2023-08-24', address: '日本', event: '日本福岛核污水排海', url: '', tag: ['其他'], remark: ''},
                 {date: '2023-06-11', address: '成都', event: '成都地铁污蔑偷拍事件', url: 'https://www.bilibili.com/video/BV17t421K7G1', tag: ['女权'], remark: ''},

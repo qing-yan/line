@@ -46,6 +46,9 @@ category:
 ## 自然
 - [菊科-龙女之声](https://www.bilibili.com/video/BV1Gr421F7vH)
 
+## 音乐
+- [俩俩相忘](https://www.bilibili.com/video/)
+
 ## 其他
 ### 魔术
 - [大胯123-笔穿橡皮筋魔术](https://www.bilibili.com/video/BV18Z421s7yK)
@@ -58,6 +61,7 @@ category:
 - [【参考信息第181期】一“盘”等于几“独”；都太想进步](https://www.bilibili.com/video/BV1Rw411E7vF)
 
 ### 其他
-1. [支持仅退款，新华社惨遭炸店](https://www.bilibili.com/video/BV11g4y1D7Cm)
-2. [当你阅尽千帆，是否还能遇见，痴痴等你的少年。](https://www.bilibili.com/video/BV1w64y1W7zL)
-5. [“郝郝反思”一下，春晚小品《坑》到底坑了谁？](https://www.bilibili.com/video/BV19P4y1z7Ro)虽然感觉过度解读，但是也有真知灼见
+- [支持仅退款，新华社惨遭炸店](https://www.bilibili.com/video/BV11g4y1D7Cm)
+- [当你阅尽千帆，是否还能遇见，痴痴等你的少年。](https://www.bilibili.com/video/BV1w64y1W7zL)
+- [“郝郝反思”一下，春晚小品《坑》到底坑了谁？](https://www.bilibili.com/video/BV19P4y1z7Ro)虽然感觉过度解读，但是也有真知灼见
+- [家庭电路-城阳电工](https://www.bilibili.com/video/BV1ZZ421u7Dq)

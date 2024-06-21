@@ -31,7 +31,7 @@
                 //隐藏直播动态
                 var dyn_zhi_bo = dyn.querySelector('.bili-dyn-time.fs-small');
                 if (dyn_zhi_bo != null) {
-                    if (dyn_zhi_bo.innerText === '直播了') {
+                    if (dyn_zhi_bo.innerText === '直播了' | dyn_zhi_bo.innerText === '预约的直播') {
                         dyn.style.display = 'none';
                         return;
                     }

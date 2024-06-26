@@ -397,39 +397,6 @@ function initData() {
 
 
 
-
-
-
-/**
- * 创建顶层浮动面板
- * @param {Object} document - 文档对象
- * @returns {Object} - 创建的浮动面板
- */
-function addDiv(document) {
-    //创建顶层浮动面板
-    var div = document.createElement('div');
-    //设置样式，位于网页左侧居中
-    div.style.position = 'fixed';
-    //底部距离
-    div.style.bottom = '100px';
-    div.style.left = '10px';
-    div.style.zIndex = '9999';
-    //背景色天蓝色
-    div.style.backgroundColor = '#87cefa';
-    //背景不透明度
-    div.style.opacity = '0.9';
-    //修改border
-    div.style.borderRadius = '5px';
-    div.style.border = '1px solid #ccc';
-    div.style.padding = '10px';
-    div.style.fontSize = '16px';
-    div.style.cursor = 'pointer';
-    //将面板添加到网页中
-    document.body.appendChild(div)
-    return div
-}
-
-
 /**
  * bv号转av号
  * 代码来自：https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/misc/bvid_desc.md

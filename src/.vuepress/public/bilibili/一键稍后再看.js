@@ -5,6 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://t.bilibili.com/*
+// @require      file://D:/workspace/work/tampermonkey/blackUpList.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
 // @grant        none
 // ==/UserScript==
@@ -22,8 +23,9 @@
             约${((new Date().getTime() - lastAddTime.getTime()) / 1000 / 3600).toFixed(1)}小时前`, '100px')
         }
         var button = addButton('稍后再看', '500px')
-        var num = 0
-            //添加监听功能
+        var num = 0;
+        var black_up_list = getData();
+        //添加监听功能
         button.addEventListener('click', function() {
             //获取所有bili-dyn-list__item，即动态列表
             var dynList = document.querySelectorAll('.bili-dyn-list__item');
@@ -35,6 +37,14 @@
                         dyn.style.display = 'none';
                         return;
                     }
+                }
+                //获取up主名字，黑名单跳过
+                var up_name_span = dyn.querySelector('.bili-dyn-title');
+                //bili-dyn-title__text bili-dyn-title__text fs-large normal-vip-color
+                var up_name = up_name_span.innerText;
+                if (black_up_list.includes(up_name)) {
+                    console.log('黑名单UP主：' + up_name);
+                    return;
                 }
                 //获取bili-dyn-card-video，即视频组件
                 var dynVideo = dyn.querySelector('.bili-dyn-card-video');

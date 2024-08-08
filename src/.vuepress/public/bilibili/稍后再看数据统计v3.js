@@ -29,13 +29,13 @@ var data = {};
                 send_add(aid, csrf);
                 e.style.display = 'none'
             });
-            //------------设置【BV】按钮--------
-            var bv = addButton(e, 'BV');
-            bv.addEventListener('click', () => {
-                //获取并复制BV号
-                data.bv = getBV(e);
-                copy(data.bv);
-            });
+            //------------获取BV号--------
+            //添加span
+            var span = document.createElement('span');
+            span.style.marginLeft = '10px';
+            e.querySelector('div.state').appendChild(span);
+            data.bv = getBV(e);
+            span.innerText = data.bv;
             //------------覆盖删除按钮事件--------
             get_video_info(e);
             var del = e.querySelector('i.btn-del.icon');
@@ -81,9 +81,14 @@ var data = {};
  */
 function modify_footer() {
     var footer = document.querySelector('div.international-footer');
-    //隐藏原有内容
-    footer.querySelector('div.link-box.b-footer-wrap').style.display = 'none';
-    footer.querySelector('div.partner.b-footer-wrap').style.display = 'none';
+    if (footer == null) {
+        footer = document.querySelector('div#biliMainFooter');
+        footer.querySelector('div.bili-footer').style.display = 'none';
+    } else {
+        //隐藏原有内容
+        footer.querySelector('div.link-box.b-footer-wrap').style.display = 'none';
+        footer.querySelector('div.partner.b-footer-wrap').style.display = 'none';
+    }
     //自定义footer
     var my_footer = document.createElement('div');
     //设置id

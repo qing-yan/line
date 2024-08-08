@@ -4,7 +4,7 @@
 // @version      2024-06-28
 // @description  try to take over the world!
 // @author       You
-// @match        https://bbs.nga.cn/read.php?tid=40679021
+// @match        https://bbs.nga.cn/*
 // @require      file://D:/workspace/work/tampermonkey/publicFunctions.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=nga.cn
 // @grant        none
@@ -15,16 +15,13 @@
     // Your code here...
     var my_button = floatButton("下载图片", document.body);
     my_button.addEventListener("click", function(){
-        var img_list = document.querySelectorAll('table.forumbox.postbox span.postcontent.ubbcode img');
+        var img_list = document.querySelectorAll('img');
         var src_list = [];
         for (let index = 0; index < img_list.length; index++) {
             const img = img_list[index];
-            if (img.src.includes("//img4") && img.src.includes("/smile/")) {
-                console.log(img.src);
-                continue;
-            }
-            if (img.src.includes("http")){
+            if (img.src.includes('attachments')) {
                 src_list.push(img.src);
+                console.log(img.src);
             }
         }
         

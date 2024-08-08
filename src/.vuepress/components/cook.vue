@@ -26,6 +26,7 @@ export default {
                 /*
 
                 */
+                {name: '双椒蒸排骨', url: 'BV17J4m1g7NV', tag: ['排骨'], recommend: false, remark: ''},
                 {name: '蒸肉丸', url: 'BV1Zm421P7qD', tag: ['猪肉', '萝卜'], recommend: false, remark: '需要木薯粉'},
                 {name: '红烧肘子', url: 'BV1mi421U7Av', tag: ['猪肉', ], recommend: false, remark: ''},
                 {name: '炸豆腐、快乐红薯、烤馒头、烤排骨、吐司虾滑、牛肉干', url: 'BV15C411n7vE', tag: ['豆腐', '排骨', '空气炸锅', ], recommend: false, remark: ''},

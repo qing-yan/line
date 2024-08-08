@@ -42,6 +42,7 @@ category:
 - [铁西区-一目十影](https://www.bilibili.com/video/BV1iy411B7ZH)
 - [农民工](https://www.bilibili.com/video/BV1Qg4y1c7v3)
 - [麦当劳邪教杀人事件-老张的精分世界](https://www.bilibili.com/video/BV1ef421D7uj)
+- [李白-江湖举人](https://www.bilibili.com/video/BV1US411A7do)
 
 ## 自然
 - [菊科-龙女之声](https://www.bilibili.com/video/BV1Gr421F7vH)

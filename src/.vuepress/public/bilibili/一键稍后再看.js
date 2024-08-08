@@ -14,9 +14,10 @@
     'use strict';
     //等待页面加载完毕
     window.onload = function() {
-        deleteDT();
         //打印标记
         console.log('B站动态列表稍后再看按钮扩大并自动加入脚本已加载');
+        //屏蔽部分动态
+        deleteDT();
         //获取上次添加时间
         var lastAddTime = new Date(Number(localStorage.getItem('lastAddTime')));
         if (lastAddTime != null) {
@@ -25,20 +26,11 @@
         }
         var button = addButton('稍后再看', '500px')
         var num = 0;
-        var black_up_list = getData();
         //添加监听功能
         button.addEventListener('click', function() {
             //获取所有bili-dyn-list__item，即动态列表
             var dynList = document.querySelectorAll('.bili-dyn-list__item');
             dynList.forEach((dyn) => {
-                //获取up主名字，黑名单跳过
-                var up_name_span = dyn.querySelector('.bili-dyn-title');
-                //bili-dyn-title__text bili-dyn-title__text fs-large normal-vip-color
-                var up_name = up_name_span.innerText;
-                if (black_up_list.includes(up_name)) {
-                    console.log('黑名单UP主：' + up_name);
-                    return;
-                }
                 //获取bili-dyn-card-video，即视频组件
                 var dynVideo = dyn.querySelector('.bili-dyn-card-video');
                 //如果为空则不是视频动态，不为空才是
@@ -67,19 +59,18 @@ function deleteDT() {
     var ddt = addButton('删除冗余动态', '200px');
     ddt.addEventListener('click', function() {
         //获取up主黑名单
-        var black_upname = JSON.parse(localStorage.getItem('black_upname'));
-        if (black_upname == null) {
-            black_upname = [];
-            localStorage.setItem('black_upname', JSON.stringify(black_upname));
-        }
+        var black_upname = getData();
         //获取动态列表
         var dynList = document.querySelectorAll('.bili-dyn-list__item');
+        var count_zb = 0;
+        var count_bu = 0;
         for (let index = 0; index < dynList.length; index++) {
             const element = dynList[index];
             //删除直播动态
             var dyn_zhi_bo = element.querySelector('.bili-dyn-time.fs-small');
             if (dyn_zhi_bo != null) {
                 if (dyn_zhi_bo.innerText === '直播了' | dyn_zhi_bo.innerText === '预约的直播') {
+                    count_zb += 1;
                     element.remove();
                     continue;
                 }
@@ -96,12 +87,13 @@ function deleteDT() {
             if (black_upname.indexOf(upname) != -1) {
                 //如果是视频动态
                 if (element.querySelector('.bili-dyn-item__desc').innerText.indexOf('投稿了视频') != -1) {
+                    count_bu += 1;
                     //删除动态
                     element.remove();
                 }
             }
         }
-        
+        console.log(`屏蔽直播动态${count_zb}条，屏蔽黑名单UP主视频动态${count_bu}条`);
     })
 }
 

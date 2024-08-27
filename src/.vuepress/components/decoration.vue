@@ -102,6 +102,7 @@ export default {
                 {name: '住范-美缝', url: 'BV1Jv411z72E', tags: ['美缝'], remark: '美缝测评'},
                 {name: '褚工-聚脲', url: 'BV1Jv411z72E', tags: ['美缝'], remark: '聚脲'},
 
+                {name: '阳仔-全屋定制', url: 'BV1i4421Z74C', tags: ['装修公司'], remark: ''},
                 {name: '住范-设计师', url: 'BV1hb4y1b7Vw', tags: ['装修公司'], remark: ''},
                 {name: '住范-全屋定制', url: 'BV1qk4y1v7EE', tags: ['装修公司'], remark: ''},
                 {name: '住范-装修公司', url: 'BV1nQ4y1Q7FX', tags: ['装修公司'], remark: ''},
@@ -142,6 +143,7 @@ export default {
                 {name: '住范-智能照明', url: 'BV1YD4y1V7e3', tags: ['电器', '灯具'], remark: ''},
                 {name: '住范-空调', url: 'BV1YD4y1V7e3', tags: ['电器', '空调'], remark: '空调遮丑'},
 
+                {name: '土豆-其他', url: 'BV1ny411i7cP', tags: ['其他'], remark: '工具准备'},
                 {name: '阳仔-其他', url: 'BV19F4m1P7gB', tags: ['其他'], remark: '工具准备'},
                 {name: '老罗-预留尺寸', url: 'BV1VZ421J77L', tags: ['其他'], remark: ''},
                 {name: '住范-适老化', url: 'BV1794y1773H', tags: ['其他'], remark: '适老化改造'},

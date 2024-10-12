@@ -4,7 +4,24 @@ date: 2023-12-10
 category:
  - 生活
 ---
+## 国标
+1. [GB50210-2018 建筑装饰装修工程质量验收标准](https://www.soujianzhu.cn/NormAndRules/NormContent.aspx)
+2. [T/SDDA 0002-2021 住宅装饰装修工程质量验收标准](https://www.doc88.com/p-39216100591317.html#:~:text=TSDDA%200002)上海市地方标准
+3. [JGJ 450-2018 / 备案号J 2513-2018 老年人照料设施建筑设计标准]()
+4. [GB/T 43003-2023 定制家具 安装验收规范]()
+
+
+
+
+
 <Decoration></Decoration>
+
+## 笔记
+1. 询问装修公司的施工和验收标准，如相关手册
+2. 询问签约前可否提供报价单
+3. 柜子计价方式及单价
+4. 板材封边、环保、类型，浴室柜、背板、门板板材类型
+5. 
 
 <script setup lang="ts">
 import Decoration from "@Decoration";

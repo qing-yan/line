@@ -22,7 +22,8 @@ export default {
     data() {
         return {
             events: [
-                {date: '2024-0-0', address: '', event: '民警救轻生女子牺牲', url: '', tag: ['社会'], remark: ''},
+                {date: '2024-0-0', address: '', event: '骑行碾压事件', url: '', tag: ['社会'], remark: ''},
+                {date: '2024-0-0', address: '', event: '民警救轻生女子牺牲', url: 'https://www.bilibili.com/video/BV1d2421d7ud', tag: ['社会'], remark: ''},
                 {date: '2024-0-0', address: '', event: '九鼎大厦火灾', url: '', tag: ['事故'], remark: ''},
                 {date: '2024-0-0', address: '', event: '崂山路虎女', url: '', tag: ['社会'], remark: ''},
                 {date: '2024-0-0', address: '', event: '姜萍', url: '', tag: ['社会'], remark: ''},

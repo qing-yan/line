@@ -28,6 +28,7 @@ category:
 > - [不知道什么结](https://www.bilibili.com/video/BV1jD421J7sE)
 
 ### 其他
+> - [用绳子给口袋打结](https://www.bilibili.com/video/BV1KTpbe3EtF/)
 > - [篷布角固定](https://www.bilibili.com/video/BV117411J73H/?t=571)
 > - [扎口袋](https://www.bilibili.com/video/BV1GE411J7vv)活结
 > - [穿线孔](https://www.bilibili.com/video/BV1AC411b7ci?t=52)

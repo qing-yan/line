@@ -22,6 +22,7 @@ export default {
     data() {
         return {
             events: [
+                {date: '2024-09-00', address: '网络', event: '三只羊月饼', url: '', tag: ['网红'], remark: ''},
                 {date: '2024-06-09', address: '成都', event: '女子被女住户当保安面杀害', url: 'https://www.bilibili.com/video/BV1xi421i748', tag: ['女权'], remark: '需结合其他事件看[我们没要你救](https://www.bilibili.com/video/BV1Su4m1M7fr)'},
                 {date: '2024-05-03', address: '河南', event: '河南大学大礼堂失火', url: 'https://www.bilibili.com/video/BV1GJ4m1n7ej', tag: ['事故'], remark: '全国文保'},
                 {date: '2024-05-01', address: '广东', event: '梅大高速塌方事件', url: '', tag: ['事故'], remark: '48人死亡'},

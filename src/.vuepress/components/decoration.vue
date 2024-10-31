@@ -13,6 +13,8 @@
                 <el-badge v-if="item.recommend" value="荐"></el-badge>
             </a>
             <span>：{{ item.remark }}</span>
+            <el-tag size="small" v-for="(item, j) in item.tags" :key="j" style="margin: 0px 5px 5px 0px; cursor: pointer;" @click="clickTag(item)" :type="selectedTag === item ? 'success' : ''">{{item}}</el-tag>
+
         </el-col>
     </el-row>
 </template> 
@@ -22,6 +24,55 @@ export default {
         return {
             urlPre: 'https://www.bilibili.com/video/',
             menu: [
+                // {name: '', url: '', tags: ['', ], remark: ``},
+                {name: '装修避坑', url: 'BV1NTp4eYE7d', tags: ['', ], remark: `
+                1、新墙挂网、植筋
+                2、线径：照明1.5，插座2.5，空调4
+                3、瓷砖边角隐藏
+                4、地漏不能有断层
+                
+                `},
+                {name: '全屋定制', url: 'BV18r421K78o', tags: ['全屋定制', ], remark: `
+                1、提前问抽屉价格
+                2、问五金品牌等
+                3、一门到顶容易变形
+                4、拉直器是否赠送？按根算还是按米算？按根算更好
+                5、封顶板、见光板需要付钱不？
+                6、非标尺寸收费问题
+                `},
+                {name: '瓦工', url: 'BV1KE4m1d7xm', tags: ['瓷砖', '美缝', ], remark: `
+                1、贴砖后立马清理缝隙；
+                2、墙砖垂直；
+                3、开孔必须用开孔器，保留同排立柱；
+                4、瓷砖和窗户间留缝；
+                `},
+                {name: '定制家具 板材', url: 'BV1m5411m7Gq', tags: ['全屋定制', ], remark: `
+                1、板材使用同下；
+                2、不要找木工打柜子；
+                3、不要用气钉、胶水连接板材，不牢固；
+                4、封边水平看黑线，越少越好；
+                5、展开面积计价：拆开每块板子算钱；
+                6、投影面积计价：柜体长*高计价
+                `},
+                {name: '全屋定制', url: 'BV1gFxse3Ef6', tags: ['全屋定制'], remark: `
+                1、颗粒板防潮差，所以浴室柜用多层板或金属板材；
+                2、橱柜的吊柜背板用密度板，因为要装吊码且不承重；
+                3、橱柜的吊柜背板用E0级3mm密度板，其他所有背板ENF级9mm颗粒板，所有侧板、层板、柜门用18mm；
+                4、柜体用EVA封边，柜门PUR封边胶线小，激光封边贵；
+                5、五金省钱国产DTC等，升级海蒂诗、百隆`},
+                {name: '瓷砖', url: 'BV1MNsueZEVW', tags: ['瓷砖'], remark: ''},
+                {name: '乳胶漆批腻子胶水', url: 'BV1mfHKeVEjY', tags: ['乳胶漆', '腻子','胶水'], remark: ''},
+                {name: '窗户样角', url: 'BV1RJ4meUEK7', tags: ['门窗'], remark: ''},
+                {name: '全屋定制', url: 'BV16Tp3e7Ehg', tags: ['全屋定制'], remark: ''},
+                {name: '乳胶漆颜色', url: 'BV1dU411U7ru', tags: ['乳胶漆'], remark: ''},
+                {name: '一口气搞懂窗户', url: 'BV1KnWXeCEM1', tags: ['门窗'], remark: ''},
+                {name: '厨房橱柜', url: 'BV1BjWkevEeg', tags: ['厨房', '橱柜'], remark: ''},
+                {name: '门窗店的报价方式', url: 'BV1NWnoejEoA', tags: ['门窗'], remark: ''},
+                {name: '插座', url: 'BV1CBW4eNEyT', tags: ['水电', '插座'], remark: ''},
+                {name: '窗户的安装注意事项', url: 'BV1BS411w7aT', tags: ['门窗'], remark: ''},
+                {name: '窗户安装与验收规范', url: 'BV1fS421X7xY', tags: ['门窗'], remark: ''},
+                
+
                 /*
 
                 */
@@ -60,6 +111,7 @@ export default {
                 {name: '阳仔-防水', url: 'BV14P4y1F75A', tags: ['卫生间', '防水'], remark: '工艺'},
                 {name: '阳仔-马桶', url: 'BV1vL4y1V7bP', tags: ['卫生间', '马桶'], remark: '马桶移位防堵'},
                 {name: '阳仔-卫生间', url: 'BV1Ua411h7F6', tags: ['卫生间', '水电'], remark: ''},
+                {name: '阳仔-卫生间', url: 'BV1fJ4m1M7TW', tags: ['卫生间', ], remark: ''},
                 
                 {name: '褚工-水电', url: 'BV1RJ4m1N7bk', tags: ['水电'], remark: ''},
                 {name: '住范-水电', url: 'BV1mY4y1s7mv', tags: ['水电'], remark: ''},
@@ -144,12 +196,16 @@ export default {
                 {name: '住范-空调', url: 'BV1YD4y1V7e3', tags: ['电器', '空调'], remark: '空调遮丑'},
 
                 {name: '土豆-其他', url: 'BV1ny411i7cP', tags: ['其他'], remark: '工具准备'},
+                {name: '家研所-沙发', url: 'BV1FmWSetEjb', tags: ['其他'], remark: ''},
                 {name: '阳仔-其他', url: 'BV19F4m1P7gB', tags: ['其他'], remark: '工具准备'},
+                {name: '老罗-窗户', url: 'BV1eq4y1M7SR', tags: ['其他'], remark: ''},
+                {name: '老罗-沙发', url: 'BV1yz421i7ME', tags: ['其他'], remark: ''},
                 {name: '老罗-预留尺寸', url: 'BV1VZ421J77L', tags: ['其他'], remark: ''},
                 {name: '住范-适老化', url: 'BV1794y1773H', tags: ['其他'], remark: '适老化改造'},
                 {name: '住范-户型', url: 'BV1Wk4y1R7wx', tags: ['其他'], remark: ''},
                 {name: '住范-户型', url: 'BV1Lf4y1U7JC', tags: ['其他'], remark: ''},
                 {name: '住范-其他', url: 'BV1bJ411V71T', tags: ['其他', '装修流程', '水电', '防水', '厨房', '卫生间'], remark: '卫生间、厨房电上水下，腻子，电源极性检测器'},
+                {name: '住范-其他', url: 'BV11E421N7ja', tags: ['其他'], remark: ''},
                 {name: '砖哥-其他', url: 'BV12G411Z7NM', tags: ['其他', '水电', '防水', '卫生间', '踢脚线', '乳胶漆'], remark: '黄墙绿地、实景放样、地面开槽、衣柜后防水、卫生间拉毛、隐藏踢脚线、儿童漆'},
                 {name: '砖哥-其他', url: 'BV1Lh4y1C7Bx', tags: ['其他', '装修流程', '水电', '美缝'], remark: `1.装修形式
                 ->2.部分提前购买家电->3.拆改->4.下水管隔音棉->5.量尺寸出设计图->6.封阳台->7.中央空调等->8.水电改造

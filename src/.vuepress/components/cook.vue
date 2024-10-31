@@ -26,6 +26,12 @@ export default {
                 /*
 
                 */
+                // {name: '', url: '', tag: ['', ], recommend: false, remark: ''},
+                {name: '幸福薯饼、黑椒土豆泥、芝士土豆饼、炸薯条、椒盐土豆球、气泡土豆', url: 'BV15s2EYaE3n', tag: ['土豆', ], recommend: false, remark: ''},
+                {name: '白切鸡', url: 'BV14M4m1y7V1', tag: ['鸡肉', ], recommend: false, remark: ''},
+                {name: '粉蒸牛肉', url: 'BV1G6tXevEDf', tag: ['牛肉', ], recommend: false, remark: ''},
+                {name: '糖醋排骨', url: 'BV1zZtZe4ERt', tag: ['排骨', ], recommend: false, remark: ''},
+                {name: '蒜香鸡翅', url: 'BV1W1421t7BH', tag: ['鸡翅'], recommend: false, remark: ''},
                 {name: '双椒蒸排骨', url: 'BV17J4m1g7NV', tag: ['排骨'], recommend: false, remark: ''},
                 {name: '蒸肉丸', url: 'BV1Zm421P7qD', tag: ['猪肉', '萝卜'], recommend: false, remark: '需要木薯粉'},
                 {name: '红烧肘子', url: 'BV1mi421U7Av', tag: ['猪肉', ], recommend: false, remark: ''},

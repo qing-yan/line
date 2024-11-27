@@ -22,12 +22,18 @@ export default {
     data() {
         return {
             events: [
+                {date: '2024', event: '', address: '', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '阿里血槽事件', address: '', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '姜萍事件', address: '', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '特朗普当选', address: '', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '云浩止耕事件', address: '内蒙古', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '淀粉肠事件', address: '', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '油罐车混装食用油事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024-09-00', address: '网络', event: '三只羊月饼', url: '', tag: ['网红'], remark: ''},
                 {date: '2024-0-0', address: '', event: '骑行碾压事件', url: '', tag: ['社会'], remark: ''},
                 {date: '2024-0-0', address: '', event: '民警救轻生女子牺牲', url: 'https://www.bilibili.com/video/BV1d2421d7ud', tag: ['社会'], remark: ''},
                 {date: '2024-0-0', address: '', event: '九鼎大厦火灾', url: '', tag: ['事故'], remark: ''},
                 {date: '2024-0-0', address: '', event: '崂山路虎女', url: '', tag: ['社会'], remark: ''},
-                {date: '2024-0-0', address: '', event: '姜萍', url: '', tag: ['社会'], remark: ''},
                 {date: '2024-06-09', address: '成都', event: '女子被女住户当保安面杀害', url: 'https://www.bilibili.com/video/BV1xi421i748', tag: ['女权'], remark: '需结合其他事件看[我们没要你救](https://www.bilibili.com/video/BV1Su4m1M7fr)'},
                 {date: '2024-05-03', address: '河南', event: '河南大学大礼堂失火', url: 'https://www.bilibili.com/video/BV1GJ4m1n7ej', tag: ['事故'], remark: '全国文保'},
                 {date: '2024-05-01', address: '广东', event: '梅大高速塌方事件', url: '', tag: ['事故'], remark: '48人死亡'},

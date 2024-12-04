@@ -22,7 +22,7 @@
         //添加监听功能
         button.addEventListener('click', () => {
             // 调用删除函数，可能用于清理或重置某些状态
-            delete_func();
+            delete_func(button);
             // 设置一个定时器，等待500毫秒后执行添加函数
             // 这里可能需要一点时间间隔以确保某些操作完成或状态更新
             setTimeout(() => {
@@ -56,7 +56,7 @@ function add_func(button) {
     button.innerText = `稍后再看+${num}`;
 };
 
-function delete_func() {
+function delete_func(button) {
     //获取up主黑名单
     var black_upname = getData();
     //获取动态列表
@@ -74,7 +74,7 @@ function delete_func() {
                 continue;
             }
         }
-        //删除黑名单UP视频动态
+        //
         var upname_div = element.querySelector('div.bili-dyn-title');
         if (upname_div == null) {
             //懒加载原因可能为空，所以跳过
@@ -84,15 +84,16 @@ function delete_func() {
         var upname = upname_div.innerText;
         //如果up主在黑名单中
         if (black_upname.indexOf(upname) != -1) {
-            //如果是视频动态
-            if (element.querySelector('.bili-dyn-item__desc').innerText.indexOf('投稿了视频') != -1) {
+            //如果是视频动态或动态视频
+            const text = element.querySelector('.bili-dyn-item__desc').innerText
+            if (text.indexOf('投稿了视频') != -1 || text.indexOf('发布了动态视频') != -1) {
                 count_bu += 1;
                 //删除动态
                 element.remove();
             }
         }
     }
-    console.log(`屏蔽直播动态${count_zb}条，屏蔽黑名单UP主视频动态${count_bu}条`);
+    button.innerText += `-${count_zb}-${count_bu}`;
 };
 function add_tag() {
     var ddt = addButton('添加标记动态', '200px');
@@ -112,6 +113,10 @@ function add_tag() {
         }, 500);
         setTimeout(() => {
             document.querySelector('.bili-dyn-publishing__action.launcher').click();
+        }, 500);
+        setTimeout(() => {
+            //隐藏按钮
+            ddt.style.display = 'none';
         }, 500);
     });
 }

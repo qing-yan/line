@@ -11,10 +11,12 @@
 // ==/UserScript==
 
 var data = {};
-(function() {
+(function () {
     'use strict';
     // Your code here...
-    window.onload = () => {
+    let my_button = floatButton('统计');
+    my_button.addEventListener('click', () => {
+
         //修改footer
         modify_footer();
         //获取视频列表
@@ -33,23 +35,26 @@ var data = {};
             //添加span
             var span = document.createElement('span');
             span.style.marginLeft = '10px';
-            e.querySelector('div.state').appendChild(span);
+            console.log(e.querySelector('.video-card__right .video-card__delete'))
+            e.querySelector('.video-card__right .video-card__delete').appendChild(span);
             data.bv = getBV(e);
             span.innerText = data.bv;
             //------------覆盖删除按钮事件--------
             get_video_info(e);
-            var del = e.querySelector('i.btn-del.icon');
+            var del = e.querySelector('i.vui_icon.sic-BDC-trash_delete_line');
             del.onclick = () => {
                 mark_up(e);
                 update_up_list(false);
                 //
-                var span = e.querySelector('.corner');
+                var span = e.querySelector('div.bili-cover-card__stat span');
                 //处理多P视频
                 if (span == null) {
                     data.dp -= 1
                 } else {
                     //分离并统计分和秒
-                    var arr = span.innerHTML.split(':');
+                    const regex = /\/(.*)/;
+                    const match = str.match(regex);
+                    var arr = match[1].split(':');
                     arr.reverse();
                     //处理失效视频            
                     if (arr[0] == '已失效') {
@@ -57,6 +62,7 @@ var data = {};
                     } else {
                         data.total_time_1 -= sum_time(arr);
                     }
+                    console.log(arr)
                 }
                 data.video_count_1 -= 1;
                 //
@@ -73,7 +79,7 @@ var data = {};
         data.total_time_0 = data.total_time_1;
         //更新信息
         update_videos_info();
-    };
+    });
 })();
 
 /**
@@ -83,12 +89,12 @@ function modify_footer() {
     var footer = document.querySelector('div.international-footer');
     if (footer == null) {
         footer = document.querySelector('div#biliMainFooter');
-        footer.querySelector('div.bili-footer').style.display = 'none';
-    } else {
-        //隐藏原有内容
-        footer.querySelector('div.link-box.b-footer-wrap').style.display = 'none';
-        footer.querySelector('div.partner.b-footer-wrap').style.display = 'none';
     }
+    if (footer == null) {
+        footer = document.querySelector('div.footer.bili-footer')
+    }
+    //选择子元素
+    footer.querySelector('*').style.display = 'none';
     //自定义footer
     var my_footer = document.createElement('div');
     //设置id
@@ -104,7 +110,7 @@ function modify_footer() {
  * @returns 视频列表
  */
 function getVideos() {
-    return document.querySelectorAll('.av-item.clearfix');
+    return document.querySelectorAll('.video-card.video-card--list');
 }
 /**
  * 从cookie中获取csrf
@@ -133,7 +139,7 @@ function addButton(video, innerHTML) {
     var b = document.createElement('button');
     b.innerHTML = innerHTML;
     b.setAttribute('style', 'margin-left: 40px')
-    video.querySelector('.state').appendChild(b);
+    video.querySelector('.video-card__right .video-card__delete').appendChild(b);
     return b;
 }
 /**
@@ -152,10 +158,10 @@ function send(api, aid, csrf) {
             cookie: document.cookie
         },
         data: { aid: aid, jsonp: 'jsonp', csrf: csrf },
-        success: function(result) {
+        success: function (result) {
             console.log(result);
         },
-        error: function(err) {
+        error: function (err) {
             alert(err)
         }
     });
@@ -183,8 +189,8 @@ function send_del(aid, csrf) {
  */
 function getBV(video) {
     //获取视频链接
-    var href = video.querySelector('.t').getAttribute('href')
-        //获取bvid
+    var href = video.querySelector('a.title').getAttribute('href');
+    //获取bvid
     return href.substring(href.length - 12);
 }
 /**
@@ -193,7 +199,7 @@ function getBV(video) {
  */
 function mark_up(video) {
     //获取up主，<a>标签
-    var up = video.querySelector('a.user').innerText;
+    var up = video.querySelector('a.stat.author').innerText;
     //获取up主列表
     var up_list = localStorage.getItem('up_list');
     if (up_list == null) {
@@ -271,7 +277,7 @@ function get_last_up(if_first) {
         }
         if (if_first) {
             //获取up主信息
-            up_name = video.querySelector('a.user').innerText;
+            up_name = video.querySelector('a.stat.author').innerText;
             break;
         } else {
             if_first = true;

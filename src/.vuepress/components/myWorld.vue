@@ -23,6 +23,7 @@ export default {
         return {
             events: [
                 {date: '2024', event: '', address: '', url: '', tag: [''], remark: ''},
+                {date: '2024', event: '琼瑶去世', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024', event: '阿里血槽事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024', event: '姜萍事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024', event: '特朗普当选', address: '', url: '', tag: [''], remark: ''},

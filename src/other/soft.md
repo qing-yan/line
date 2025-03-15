@@ -21,12 +21,16 @@ tag:
 - [windirstat](https://windirstat.net/download.html)文件夹资源占用情况监控，已备份
 - [FastStone Image Viewer](https://www.ghxi.com/faststoneiw.html)图片查看工具，目前没找到更好替代，已备份
 - [风灵月影管理器](https://github.com/dyang886/Game-Cheats-Manager)暂时没用过
+- [steamcommunity 302](https://www.dogfight360.com/blog/686/)github、steam加速器
+- [壹印](https://github.com/ggchivalrous/yiyin/releases/tag/v1.5.6)这是一个直接生成图片印框的工具
 
 
 
 ## 浏览器插件
 - [Chrono Power Action](https://microsoftedge.microsoft.com/addons/detail/chrono-power-action/edcbfceedocpofmemchpcnpmpfpobmaa)可以使用alt+q在浏览器内搜索书签等内容，类似utools，目前有可能无法设置
 - [bilibili哔哩哔哩B站下载助手](https://csser.top/)[微软商店](https://microsoftedge.microsoft.com/addons/detail/cagicamgdlbdmonbclkpgiabbldodgae)
+- [哔哩哔哩(B站|Bilibili)收藏夹Fix](https://greasyfork.org/zh-CN/scripts/383143-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-b%E7%AB%99-bilibili-%E6%94%B6%E8%97%8F%E5%A4%B9fix)油猴（Tampermonkey）脚本，用于修复B站失效收藏。
+- [Awesome Bilibili Extra](https://github.com/HCLonely/awesome-bilibili-extra)收集一些让我们在使用B站时更加方便的浏览器扩展/脚本/程序.
 
 ## 安卓软件
 - [RecordYou](https://github.com/you-apps/RecordYou/releases)安卓开源录屏软件

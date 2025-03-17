@@ -1,0 +1,1 @@
+import{aP as e,P as t,Q as o,ab as c}from"./framework-270ea3de.js";const n={};function r(a,s){return t(),o("div",null,[c(" #region demo ")])}const l=e(n,[["render",r],["__file","test.html.vue"]]);export{l as default};

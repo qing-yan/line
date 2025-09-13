@@ -22,7 +22,11 @@ export default {
     data() {
         return {
             events: [
-                {date: '2024', event: '', address: '', url: '', tag: [''], remark: ''},
+                {date: '2025', event: '', address: '', url: '', tag: [''], remark: ''},
+                {date: '2025', event: '黄杨钿甜事件', address: '', url: '', tag: [''], remark: ''},
+                {date: '2025', event: '肖飞、董袭莹协和医院4+4事件', address: '', url: '', tag: [''], remark: ''},
+                {date: '2025', event: '大同订婚强奸案审判结果', address: '', url: '', tag: [''], remark: ''},
+                {date: '2025-03-15', event: '央视再批胖猫事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024', event: '阿里血槽事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024', event: '姜萍事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2024', event: '特朗普当选', address: '', url: '', tag: [''], remark: ''},

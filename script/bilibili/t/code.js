@@ -1,19 +1,7 @@
-// ==UserScript==
-// @name         一键稍后再看
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @match        https://t.bilibili.com/*
-// @require      file://D:/workspace/work/tampermonkey/blackUpList.js
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
-// @grant        none
-// ==/UserScript==
-
-(function() {
-    'use strict';
+let black_upname_str = JSON.parse(localStorage.getItem('black_upname'));
+function start() {
     //等待页面加载完毕
-    window.onload = function() {
+    window.onload = function () {
         //打印标记
         console.log('B站动态列表稍后再看按钮扩大并自动加入脚本已加载');
         //添加标记动态
@@ -29,10 +17,14 @@
                 // 调用添加函数，传入button作为参数
                 // 此操作可能是在状态重置或界面更新后，重新启用或显示某个按钮
                 add_func(button);
+
             }, 500);
         });
+
+        updateBlackUpList();
+        createBlackUpDiv(black_upname_str);
     };
-})();
+}
 function add_func(button) {
     var num = 0;
     //获取所有bili-dyn-list__item，即动态列表
@@ -55,7 +47,6 @@ function add_func(button) {
     });
     button.innerText = `稍后再看+${num}`;
 };
-
 function delete_func(button) {
     //获取up主黑名单
     var black_upname = getData();
@@ -84,17 +75,45 @@ function delete_func(button) {
         var upname = upname_div.innerText;
         //如果up主在黑名单中
         if (black_upname.indexOf(upname) != -1) {
-            //如果是视频动态或动态视频
-            const text = element.querySelector('.bili-dyn-item__desc').innerText
-            if (text.indexOf('投稿了视频') != -1 || text.indexOf('发布了动态视频') != -1) {
-                count_bu += 1;
-                //删除动态
-                element.remove();
+            console.log(upname);
+            //获取动态时间描述等，如果是视频动态或动态视频
+            let text = element.querySelector('.bili-dyn-item__desc').innerText
+            // 1. 提取关键词到数组（语义化命名，便于后续维护）
+            const videoPublishKeywords = ['投稿了视频', '发布了动态视频'];
+            // 2. 用some()简化“任意关键词匹配”逻辑（比多个indexOf更直观）
+            const isVideoPublishText = videoPublishKeywords.some(keyword => text.includes(keyword));
+            // 3. 条件判断（逻辑清晰，注释说明业务目的）
+            if (isVideoPublishText) {
+                count_bu += 1; // 累加“视频发布类动态”计数
+                element.remove(); // 删除该视频发布动态元素
+            }
+            //获取动态内容
+            text = element.querySelector('.bili-dyn-item__body').innerText
+            //检查是否为抽奖动态
+            if (!text.includes('奖')) { // 若文本不包含"奖"字
+                element.remove(); // 删除当前动态元素
+            }
+            //增加记录抽奖
+            let bili_dyn_action = element.querySelector('.bili-dyn-action.forward.active');
+            if (bili_dyn_action != null) {
+                bili_dyn_action.click();
+                setTimeout(() => {
+                    let publish_btn = document.querySelector('.bili-dyn-forward-publishing__action__btn');
+                    if (publish_btn != null) {
+                        publish_btn.addEventListener('click', () => {
+                            updateBlackUpList(upname);
+                        });
+                    }
+                }, 500);
             }
         }
     }
     button.innerText += `-${count_zb}-${count_bu}`;
 };
+/**
+ * 添加标记动态功能
+ * 创建一个"添加标记动态"的按钮，点击后自动在动态发布框中插入分隔符并发布
+ */
 function add_tag() {
     var ddt = addButton('添加标记动态', '200px');
     ddt.addEventListener('click', () => {
@@ -120,7 +139,6 @@ function add_tag() {
         }, 500);
     });
 }
-
 /**
  * 创建按钮
  * @returns 
@@ -172,4 +190,67 @@ function addDiv(text) {
     //将按钮添加到网页中
     document.body.appendChild(my_div);
     return my_div;
+}
+//将黑名单内容存储或更新到localStorage中
+function updateBlackUpList() {
+    //将黑名单内容存储到localStorage中
+    let black_upname = getData();
+    //检查localStorage是否存储了黑名单内容
+    if (!black_upname_str || black_upname_str.length == 0) {
+        //修改为name,count,time格式
+        black_upname = black_upname.map(name => ({ name, count: 0, time: 0 }));
+        localStorage.setItem('black_upname', JSON.stringify(black_upname));
+        return;
+    }
+
+    //检查是否有更新的黑名单内容
+    if (black_upname.length == black_upname_str.length) {
+        return;
+    }
+    //更新黑名单内容
+    black_upname.forEach(item => {
+        // 在已存储的黑名单中查找同名的up主
+        let index = black_upname_str.findIndex(up => up.name == item);
+        if (index == -1) {
+            // 如果未找到，将其添加到黑名单中
+            black_upname_str.push({ name: item, count: 0, time: 0 });
+        }
+    });
+    localStorage.setItem('black_upname', JSON.stringify(black_upname_str));
+
+}
+//更新黑名单内容中的count和time
+function updateBlackUpCountTime(upname) {
+    //更新黑名单内容中的count和time
+    black_upname_str.forEach(item => {
+        if (item.name == upname) {
+            item.count += 1;
+            item.time = new Date().toLocaleDateString();
+        }
+    });
+    localStorage.setItem('black_upname', JSON.stringify(black_upname_str));
+}
+//创建一个div，用于显示黑名单内容
+function createBlackUpDiv() {
+    //创建一个div
+    let black_up_div = document.createElement('div');
+    //排序，按count从大到小排序
+    black_upname_str.sort((a, b) => b.count - a.count);
+    //设置div的文本内容，name,count,time
+    black_up_div.innerText = black_upname_str.map(item => `${item.name},${item.count},${item.time}`).join('\n');
+    //设置div的样式，位于网页右侧居中
+    black_up_div.style.position = 'fixed';
+    black_up_div.style.top = '10px';
+    black_up_div.style.right = '10px';
+    black_up_div.style.zIndex = '9999';
+    //修改border
+    black_up_div.style.borderRadius = '5px';
+    black_up_div.style.border = '1px solid #ccc';
+    black_up_div.style.padding = '10px';
+    black_up_div.style.fontSize = '16px';
+    black_up_div.style.cursor = 'pointer';
+    //添加滚动条
+    black_up_div.style.overflowY = 'auto';
+    //将div添加到网页中
+    document.body.appendChild(black_up_div);
 }

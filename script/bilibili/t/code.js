@@ -47,7 +47,7 @@ function add_func(button) {
     });
     button.innerText = `稍后再看+${num}`;
 };
-function delete_func(button) {
+async function delete_func(button) {
     //获取up主黑名单
     var black_upname = getData();
     //获取动态列表
@@ -75,7 +75,6 @@ function delete_func(button) {
         var upname = upname_div.innerText;
         //如果up主在黑名单中
         if (black_upname.indexOf(upname) != -1) {
-            console.log(upname);
             //获取动态时间描述等，如果是视频动态或动态视频
             let text = element.querySelector('.bili-dyn-item__desc').innerText
             // 1. 提取关键词到数组（语义化命名，便于后续维护）
@@ -92,24 +91,35 @@ function delete_func(button) {
             //检查是否为抽奖动态
             if (!text.includes('奖')) { // 若文本不包含"奖"字
                 element.remove(); // 删除当前动态元素
-            }
-            //增加记录抽奖
-            let bili_dyn_action = element.querySelector('.bili-dyn-action.forward.active');
-            if (bili_dyn_action != null) {
-                bili_dyn_action.click();
-                setTimeout(() => {
-                    let publish_btn = document.querySelector('.bili-dyn-forward-publishing__action__btn');
-                    if (publish_btn != null) {
-                        publish_btn.addEventListener('click', () => {
-                            updateBlackUpList(upname);
-                        });
-                    }
-                }, 500);
+            } else {
+                //增加记录抽奖
+                let bili_dyn_action = element.querySelector('.bili-dyn-action.forward');//获取转发按钮
+                console.log(`${upname}:${bili_dyn_action.innerText}111`);
+                if (bili_dyn_action != null) {
+                    bili_dyn_action.click();
+                    console.log(`${upname}:${bili_dyn_action.innerText}222`);
+                    await new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            let publish_btn = element.querySelector('.bili-dyn-forward-publishing__action__btn');
+                            console.log(`${upname}:${publish_btn.innerText}333`);
+                            console.log(`${element.querySelector('div.bili-dyn-title').innerText}333`);
+                            // if (publish_btn != null) {
+                                publish_btn.addEventListener('click', () => {
+                                    console.log(`${upname}:${publish_btn.innerText}444`);
+                                    updateBlackUpCountTime(upname);
+                                });
+                            // }
+                            resolve();
+                        }, 500);
+                    })
+                 
+                }
             }
         }
     }
     button.innerText += `-${count_zb}-${count_bu}`;
 };
+
 /**
  * 添加标记动态功能
  * 创建一个"添加标记动态"的按钮，点击后自动在动态发布框中插入分隔符并发布
@@ -195,16 +205,19 @@ function addDiv(text) {
 function updateBlackUpList() {
     //将黑名单内容存储到localStorage中
     let black_upname = getData();
+    console.log(`updateBlackUpList:${black_upname}`);
     //检查localStorage是否存储了黑名单内容
     if (!black_upname_str || black_upname_str.length == 0) {
         //修改为name,count,time格式
         black_upname = black_upname.map(name => ({ name, count: 0, time: 0 }));
         localStorage.setItem('black_upname', JSON.stringify(black_upname));
+        console.log(`updateBlackUpList:已初始化黑名单，函数已返回`);
         return;
     }
 
     //检查是否有更新的黑名单内容
     if (black_upname.length == black_upname_str.length) {
+        console.log(`updateBlackUpList:黑名单内容无变化，函数已返回`);
         return;
     }
     //更新黑名单内容

@@ -94,19 +94,20 @@ async function delete_func(button) {
             } else {
                 //增加记录抽奖
                 let bili_dyn_action = element.querySelector('.bili-dyn-action.forward');//获取转发按钮
-                console.log(`${upname}:${bili_dyn_action.innerText}111`);
+                console.log(`获取到${upname}动态的转发按钮`);
+                console.log(`${upname}动态内容:${text}`);
                 if (bili_dyn_action != null) {
                     bili_dyn_action.click();
-                    console.log(`${upname}:${bili_dyn_action.innerText}222`);
                     await new Promise((resolve, reject) => {
                         setTimeout(() => {
                             let publish_btn = element.querySelector('.bili-dyn-forward-publishing__action__btn');
-                            console.log(`${upname}:${publish_btn.innerText}333`);
-                            console.log(`${element.querySelector('div.bili-dyn-title').innerText}333`);
+                            // 保存需要在事件处理程序中使用的值
+                            const btnText = publish_btn.innerText;
+                            const userName = upname;
                             // if (publish_btn != null) {
                                 publish_btn.addEventListener('click', () => {
-                                    console.log(`${upname}:${publish_btn.innerText}444`);
-                                    updateBlackUpCountTime(upname);
+                                    console.log(`已参与并记录【${userName}】的抽奖`);
+                                    updateBlackUpCountTime(userName);
                                 });
                             // }
                             resolve();
@@ -205,7 +206,6 @@ function addDiv(text) {
 function updateBlackUpList() {
     //将黑名单内容存储到localStorage中
     let black_upname = getData();
-    console.log(`updateBlackUpList:${black_upname}`);
     //检查localStorage是否存储了黑名单内容
     if (!black_upname_str || black_upname_str.length == 0) {
         //修改为name,count,time格式
@@ -247,13 +247,13 @@ function updateBlackUpCountTime(upname) {
 function createBlackUpDiv() {
     //创建一个div
     let black_up_div = document.createElement('div');
-    //排序，按count从大到小排序
-    black_upname_str.sort((a, b) => b.count - a.count);
+    //排序，按time倒序排序
+    black_upname_str.sort((a, b) => new Date(b.time) - new Date(a.time));
     //设置div的文本内容，name,count,time
-    black_up_div.innerText = black_upname_str.map(item => `${item.name},${item.count},${item.time}`).join('\n');
+    black_up_div.innerText = black_upname_str.map(item => `${item.name} ${item.count} ${item.time}`).join('\n');
     //设置div的样式，位于网页右侧居中
     black_up_div.style.position = 'fixed';
-    black_up_div.style.top = '10px';
+    black_up_div.style.top = '50px';
     black_up_div.style.right = '10px';
     black_up_div.style.zIndex = '9999';
     //修改border

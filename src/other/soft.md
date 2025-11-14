@@ -35,3 +35,6 @@ tag:
 
 ## 安卓软件
 - [RecordYou](https://github.com/you-apps/RecordYou/releases)安卓开源录屏软件
+
+## 考察中的软件
+- [BeeCount](https://github.com/TNT-Likely/BeeCount/releases)开源记账软件，[推荐页](https://www.bilibili.com/opus/1134179315322191880)

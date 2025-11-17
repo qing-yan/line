@@ -7,6 +7,9 @@
 // @match        https://t.bilibili.com/*
 // @require      file://D:/workspace/line/script/bilibili/t/blackUpList.js
 // @require      file://D:/workspace/line/script/bilibili/t/code.js
+// @require      file://D:/workspace/line/script/bilibili/t/black.js
+// @require      file://D:/workspace/line/script/bilibili/t/mark.js
+// @require      file://D:/workspace/line/script/bilibili/t/white.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
 // @grant        none
 // ==/UserScript==

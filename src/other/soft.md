@@ -23,6 +23,7 @@ tag:
 - [风灵月影管理器](https://github.com/dyang886/Game-Cheats-Manager)暂时没用过
 - [steamcommunity 302](https://www.dogfight360.com/blog/686/)github、steam加速器
 - [壹印](https://github.com/ggchivalrous/yiyin/releases/tag/v1.5.6)这是一个直接生成图片印框的工具
+- [Imagine](https://github.com/meowtec/Imagine/releases)开源图片压缩软件，可任意压缩图片大小
 
 
 
@@ -34,3 +35,6 @@ tag:
 
 ## 安卓软件
 - [RecordYou](https://github.com/you-apps/RecordYou/releases)安卓开源录屏软件
+
+## 考察中的软件
+- [BeeCount](https://github.com/TNT-Likely/BeeCount/releases)开源记账软件，[推荐页](https://www.bilibili.com/opus/1134179315322191880)

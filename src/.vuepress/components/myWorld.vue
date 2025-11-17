@@ -23,7 +23,7 @@ export default {
         return {
             events: [
                 {date: '2025', event: '', address: '', url: '', tag: [''], remark: ''},
-                {date: '2025', event: '', address: '', url: '', tag: [''], remark: ''},
+                {date: '2025', event: '杨振宁逝世', address: '', url: '', tag: [''], remark: ''},
                 {date: '2025', event: '虞书欣家族财富事件', address: '', url: '', tag: [''], remark: ''},
                 {date: '2025', event: '罗永浩西贝预制菜', address: '', url: '', tag: [''], remark: ''},
                 {date: '2025', event: '追风小叶终审', address: '', url: '', tag: [''], remark: ''},

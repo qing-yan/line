@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://www.bilibili.com/watchlater/*
-// @require      file://D:/workspace/work/tampermonkey/shzksjtjv4.js
+// @require      file:///D:/workspace/work/tampermonkey/shzksjtjv4.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
 // @grant        none
 // ==/UserScript==
